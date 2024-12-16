@@ -1,0 +1,85 @@
+Operators:
+    In Java, operators are special symbols or keywords used to perform operations on variables and values.
+
+All operator categories:
+
+    1. Arithmetic Operators:
+        These operators perform mathematical operations.
+
+        +   : Addition (adds two operands)
+        -   : Subtraction (subtracts the second operand from the first)
+        *   : Multiplication (multiplies two operands)
+        /   : Division (divides the first operand by the second)
+        %   : Modulus (returns the remainder when the first operand is divided by the second)
+
+
+    2. Relational Operators:
+        These operators compare two values and return a boolean value (true or false).
+
+        ==  : Equal to (checks if two values are equal)
+        !=  : Not equal to (checks if two values are not equal)
+        >   : Greater than (checks if the left operand is greater than the right)
+        <   : Less than (checks if the left operand is less than the right)
+        >=  : Greater than or equal to (checks if the left operand is greater than or equal to the right)
+        <=  : Less than or equal to (checks if the left operand is less than or equal to the right)
+
+    3. Logical Operators:
+        Logical operators are used to combine multiple boolean expressions or conditions.
+
+        &&  : Logical AND (returns true if both operands are true)
+        ||  : Logical OR  (returns true if at least one operand is true)
+        !   : Logical NOT (inverts the boolean value)
+
+    4. Assignment Operators:
+        Assignment operators are used to assign values to variables.
+
+        =  : Simple assignment (assigns the value of the right operand to the left operand)
+        += : Add and assign (adds the right operand to the left operand and assigns the result to the left)
+        -= : Subtract and assign (subtracts the right operand from the left and assigns the result)
+        *= : Multiply and assign (multiplies the left operand by the right and assigns the result)
+        /= : Divide and assign (divides the left operand by the right and assigns the result)
+        %= : Modulus and assign (remainder of the division of the left operand by the right and assigns the result)
+
+    5. Increment/Decrement Operators:
+        These operators increase or decrease a variable's value by 1.
+
+        ++ : Increment (increases the value of a variable by 1)
+            ++a : Pre-increment (increments before using the value)
+            a++ : Post-increment (increments after using the value)
+
+        -- : Decrement (decreases the value of a variable by 1)
+            --a : Pre-decrement (decrements before using the value)
+            a-- : Post-decrement (decrements after using the value)
+
+
+    6. Ternary Operator:
+        The ternary operator is a shorthand for an if-else statement.
+
+        condition ? expr1 : expr2 :
+            If the condition is true, expr1 is evaluated; otherwise, expr2 is evaluated.
+
+
+    7. Type Cast Operator:
+        Java allows explicit type conversion (casting) from one data type to another.
+
+        (type) value : Converts value to the specified type.
+          Ex:
+            double a = 10.5;
+            int b = (int) a; // casting from double to int (b will be 10)
+            System.out.println(b);
+
+    8. Bitwise Operators:
+        Bitwise operators operate on binary representations of numbers.
+
+        & : Bitwise AND (performs AND operation bit by bit)
+        | : Bitwise OR (performs OR operation bit by bit)
+        ^ : Bitwise XOR (performs XOR operation bit by bit)
+        ~ : Bitwise NOT (inverts each bit)
+        << : Left shift (shifts bits to the left, filling with zeros)
+        >> : Right shift (shifts bits to the right, filling with the sign bit)
+        >>>: Unsigned right shift (shifts bits to the right, filling with zeros)
+
+    9. Instanceof Operator:
+        The instanceof operator is used to check if an object is an instance of a specific class or subclass.
+
+        object instanceof ClassName : Returns true if the object is an instance of the specified class or a subclass.

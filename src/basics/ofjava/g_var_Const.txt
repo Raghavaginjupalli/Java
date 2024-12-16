@@ -1,0 +1,37 @@
+Variables & Constants:
+    In Java, variables and constants are used to store data in memory during the execution of a program.
+    The main difference between them is whether their values can change or remain fixed after being assigned.
+
+    1. Variables
+        A variable in Java is a named memory location used to store data. The value of a variable can be changed during the execution of the program.
+
+        Key Points:
+            Variables must be declared with a data type, it can be re-assigned to new values.
+            They can store different types of data such as all Primitive data types and or Strings.
+
+        > dataType variableName;                      // Declaring a variable
+
+        > variableName = value;                       // Assigning a value to variable
+
+        > dataType variableName = value;              // Declaring and initializing a variable
+
+    2. Constants
+        A constant in Java is a variable whose value cannot be changed once assigned.
+        Constants are declared using the final keyword.
+
+        Key Points:
+            Once a constant is initialized, its value is fixed.
+            Constants are written in uppercase letters with underscores (_) to improve readability.
+            They are used when you want to ensure the value remains the same throughout the program.
+
+        > final dataType variableName;                      // Declaring a constant
+
+        > variableName = value;                             // Assigning a value to constant
+
+        > final dataType variableName = value;              // Declaring and initializing a constant
+
+    NOTE : Once value assign to constant, we can't re-assign the value.
+
+NOTE: > Variable or Constants are stored in stack if it is a Local scope, otherwise Heep memory because of Global scope.
+      > But, String will local or global, it will store the reference variable in Stack and actual data in Heep.
+      > Because, String is an object not a Primitive data type.

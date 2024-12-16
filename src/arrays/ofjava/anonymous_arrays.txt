@@ -1,0 +1,15 @@
+Anonymous array:
+    An anonymous array is an array that is declared, initialized, and used without being assigned a reference variable.
+    > Since it has no reference, you cannot access it later. It's created and used on the fly, usually as an argument to a method.
+
+    NOTE: It's main purpose is for using one time execution.
+
+NOTE:
+    > Instead of anonymous array in method arguments, we can use multiple parameters to take arguments.
+    > If we have limited arguments that's fine, but if in case large numbers is to write to many times.
+    > In the method calling you must give the num of parameters in method declaration.
+    > In the anonymous array, there is no fixed num of arguments, less code.
+
+    Method calling:
+        methodName(1,2,3,4......)                     // Using parameters
+        methodName(new int[] {1,2,3,4......})           // Using anonymous array

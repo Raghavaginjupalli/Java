@@ -1,0 +1,55 @@
+Scanner Methode:
+    In Java, the Scanner class is a part of the java.util package, and it is used for reading input from various sources.
+    Source types:
+        > Keyboard input (System.in)
+        > Files
+        > Strings
+        > Other input streams
+
+    1. Methods for reading different types of input:
+            Method	                                    Description
+
+        String:
+            nextLine()	                    Reads the entire line as a String.
+                # NOTE: It will take & consume the input from keyboard until you press enter keyword.
+
+            next()	                        Reads only one word or one character from input as a String.
+
+        Numeric:
+            nextByte()                      Reads the next byte value from the input.
+            nextShort()                     Reads the next short value from the input.
+            nextInt()	                    Reads the next token as an int.
+            nextLong()                      Reads the next long integer from the input.
+            nextFloat()                     Reads the next float from the input.
+            nextDouble()	                Reads the next token as a double.
+
+        Boolean:
+            nextBoolean()                   Reads the next boolean value from the input.
+       /*
+       NOTE : Other than nextLine(), It will stop reading after giving space and type any character.
+       NOTE : If you press enter it will stop taking input from keyboard.
+
+       NOTE : IF you use other than nextLine() line after line, if you give value as a space and character then enter,
+              automatically the next methode will consume the previous value after space until another space.
+       */
+
+
+    2. Methods for checking the state of the scanner:
+        String:
+            hasNext()                       Returns true if there is another token in the input.
+            hasNextLine()                   Returns true if there is another line of input.
+
+        Numeric:
+            hasNextByte()                   Returns true if the next token can be interpreted as a byte.
+            hasNextShort()                  Returns true if the next token can be interpreted as a short.
+            hasNextInt()                    Returns true if the next token can be interpreted as an integer.
+            hasNextLong()                   Returns true if the next token can be interpreted as a long.
+            hasNextFloat()                  Returns true if the next token can be interpreted as a float.
+            hasNextDouble()                 Returns true if the next token can be interpreted as a double.
+
+        Boolean:
+            hasNextBoolean()                Returns true if the next token can be interpreted as a boolean.
+
+    3. Methods for managing the scanner:
+            close(): Closes the scanner and releases any resources associated with it.
+            reset(): Resets the scanner to its initial state.

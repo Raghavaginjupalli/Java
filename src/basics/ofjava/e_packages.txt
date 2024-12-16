@@ -1,0 +1,59 @@
+Package:
+    In Java, a package is a way to group related classes and interfaces together.
+    It helps organize your code, avoid name conflicts, and makes it easier to maintain large applications.
+
+*** NOTE: In java source file if we want to create package, the package statement need to write first,
+            then only you can write anything, otherwise compiler through error.
+
+        Ex: Package com.test....  (at most one!)
+            import any class      (Any num)
+
+            Class/interface.....  (Any num)
+
+
+        Ex: for suppose my class file is in com.hat.ring.File(class)
+
+        if you want to import File class
+        import com.hat.ring.File;       // for only File class
+        import com.hat.ring*            // for all class in "com.hat.ring" package
+        import com.*                    // for all class in "com" package only, you can't import subpackage class.
+
+        NOTE: If you use import, it will import all class and methods in the that package, not in the subpackage.
+
+
+Key Concepts of Java Packages:
+    > Namespace Management:
+    Packages help avoid class name conflicts. Two classes with the same name can exist in different packages.
+
+    > Access Control:
+    Classes, interfaces, and methods in a package can have different access levels (public, protected, private, or default), controlling their visibility across packages.
+
+    > Reusability:
+    Once a package is created, it can be reused in different applications or parts of an application.
+
+Types of Packages:
+    > Built-in Packages:
+    Java provides a rich set of built-in packages such as java.util, java.io, java.lang, etc.
+
+    > User-defined Packages:
+    These are packages that you create to organize your own classes.
+
+Package Creation:
+    To create a package, use the "package" keyword and followed by the package name at the top of your Java source file.
+
+    package com.basics.programs;        // Package declaration
+
+Usage of Package:
+
+    In Java, import is a keyword used to bring classes, interfaces, and static members from other packages
+    into your current Java file, so you can use them without having to specify their full qualified names.
+    This makes your code cleaner, shorter, and easier to read.
+
+    > In java, there is built-in packages like (java.util, java.io) you need to import in other program.
+
+    You can use the "import" keyword to include the package and its classes.
+
+    import com.basics.programs.*;                 // Importing Package with all classes
+    import com.basics.programs.printstmt;         // Importing Package with specific class(preferred)
+
+    NOTE: But java.lang package and current working packages by default imported, you don't need to import.

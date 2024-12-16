@@ -1,0 +1,117 @@
+String:
+    As we know string is class, not a primitive data type.
+    > String have Static method and object methods
+
+String Static methods:
+     Static methods in the String class do not operate on any specific String instance.
+     Instead, they perform operations associated with the class name itself.
+
+    1.valueOf():
+        Converts different data types (int, float, double, boolean, char, or object) to their String representation.
+        Usage: Useful for converting non-String types into String.
+
+        int number = 42;
+        String str = String.valueOf(number);     // Converts int to String
+        System.out.println(str);                 // Output: "42"
+
+    2.format():
+
+         Returns a formatted string using specified format specifiers, similar to printf.
+         Usage: Used for constructing formatted strings.
+
+         String formatted = String.format("My name is %s and I am %d years old.", "John", 30);
+         System.out.println(formatted);         // Output: My name is John and I am 30 years old.
+
+
+    3.join():
+
+        Joins multiple strings with a specified delimiter and returns the resulting string.
+        Usage: Useful for concatenating strings with a specific separator.
+
+        String result = String.join(",", "Java", "Python", "C++");  // delimiter is "," here, we specified in starting.
+        System.out.println(result);             // Output: Java, Python, C++
+
+    4.copyValueOf()
+
+        Converts a subset of a character array (char[]) into a String.
+        Usage: Similar to valueOf(), but specifically for working with character arrays.
+
+        char[] chars = {'H', 'e', 'l', 'l', 'o'};
+        String str = String.copyValueOf(chars);
+        System.out.println(str);                // Output: Hello
+
+
+
+String object methods:
+    Object methods in the String class operate on a specific instance of a String.
+    These methods work on the data stored in the String object.
+    These are used to manipulate or retrieve information about the instance.
+
+    1.length()	                                Returns the number of characters in the string.
+    "Java".length() -> 4
+
+    2.charAt(int index)                         Returns the character at the specified index.
+    "Java".charAt(1) → 'a'
+
+    3.substring(int beginIndex)	                Returns a substring starting from the given index.
+    "Hello".substring(2) → "llo"
+
+    4.substring(int begin, int end)             Returns a substring within the specified range.
+    "Hello".substring(1, 4) → "ell"
+
+    5.toUpperCase()                             Converts the string to uppercase.
+    "java".toUpperCase() → "JAVA"
+
+    6.toLowerCase()                             Converts the string to lowercase.
+    "JAVA".toLowerCase() → "java"
+
+    7.contains(CharSequence s)	                Checks if the string contains the specified sequence.
+    "Java".contains("av") → true
+
+    8.equals(Object another)	                Compares two strings for equality.
+    "Java".equals("Java") → true
+
+    9.equalsIgnoreCase(String s)	            Compares strings ignoring case differences.
+    "Java".equalsIgnoreCase("java") → true
+
+    10.replace(char old, char new)	            Replaces all occurrences of a character with another.
+    "Java".replace('a', 'o') → "Jovo"
+
+    11.split(String regex)	                    Splits the string into an array based on a delimiter.
+    "A,B,C".split(",") → ["A", "B", "C"]
+
+    12.trim()	                                Removes leading and trailing whitespace.
+    " Java ".trim() → "Java"
+
+    13.indexOf(char ch)	                        Returns the index of the first occurrence of a character.
+    "Java".indexOf('a') → 1
+
+    14.concat(String str)	                    Concatenates two strings.
+    "Hello".concat(" World") → "Hello World"
+
+    15. indexOf(int ch) / indexOf(String str)   Returns the first occurrence of the character or substring index.
+    String str = "Hello";
+    int index = str.indexOf('e'); // 1
+    int notFound = str.indexOf('x'); // -1
+
+    16. lastIndexOf(int ch) / lastIndexOf(String str)           Returns the last occurrence of the character or substring index.
+    Same as a indexOf() method, it returns last index occurrence
+
+    17. startsWith(String prefix) / endsWith(String suffix)     Checks if the string starts or ends with the specified prefix/suffix.
+    String str = "Hello";
+    boolean starts = str.startsWith("He"); // true
+    boolean ends = str.endsWith("lo");    // true
+
+    18. split(String regex)                      Splits the string into an array based on the given regular expression.
+    String str = "one,two,three";
+    String[] parts = str.split(","); // ["one", "two", "three"]
+
+    19. isEmpty()                                Checks if the string is empty (length() == 0).
+    String str = "";
+    boolean empty = str.isEmpty(); // true
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+> Access Modifiers:
+    In Java, access modifiers are keywords used to set the level of access or visibility for classes, methods, variables,
+    and constructors. by using this, we can control the access, such as from the same class, other classes in the same
+    package, or entirely different packages.
+
+    public:
+        Accessible from anywhere, even from other packages.
+        It Can be used for top-level and inner classes.
+        > Inside of class
+        > Outside of class
+        > Inside of package
+        > Outside of package
+
+    private:
+        Only accessible within the same class (only for inner classes).
+        Cannot be used for top-level classes.
+        > Only Inside of class
+
+    protected:
+        Accessible within the same package and by subclasses (even from other packages).
+        Cannot be used for top-level classes.
+
+    Package-private (default):
+        Accessible only within the same package.
+        Used for top-level classes (no modifier).
+
+
+Non-access modifiers:
+    1. static
+    The member belongs to the class rather than to any specific instance.
+    Used for methods, variables, and static blocks.
+
+    public class StaticExample {
+        static int x = 50;
+
+        public static void display() {
+            System.out.println("Static method called");
+        }
+    }
+    Usage: StaticExample.display(); (No object required)
+
+    2. final
+    Variables: Value cannot be changed.
+    Methods: Cannot be overridden.
+    Classes: Cannot be inherited.
+
+    public final class FinalExample {
+        final int x = 100;
+
+        public final void display() {
+            System.out.println("Final method called");
+        }
+    }
+    Usage: final int x = 10; (Cannot reassign x later)
+
+    3. abstract:
+        It is a keyword, Used to define abstract classes and methods.
+        If any method have no implementation, only declaration that should be declared as  abstract method.
+        This method have nobody so, must be overridden in subclasses, and the method end with ";".
+
+        NOTE: If a class contain at least one abstract method, the class also need be declared as abstract class.
+
+        abstract class AbstractExample {
+            abstract void display();
+        }
+
+        NOTE: Every abstract method should have overridden in child class, otherwise child class also declare as abstract class.
+
+
+
+
+
+
+    4. synchronized
+    Thread-safety for methods and blocks.
+    Only one thread can access the synchronized method at a time.
+
+    public class SyncExample {
+        public synchronized void display() {
+            System.out.println("Synchronized method called");
+        }
+    }
+    5. strictfp
+    Ensures precise floating-point calculations on all platforms.
+    Example:
+    strictfp class StrictFPExample {
+        public void calculate() {
+            double x = 10.0 / 3.0;
+            System.out.println(x);
+        }
+    }
+    Ensures consistent floating-point calculations across different CPUs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Class access modifiers:
+    Top level:
+        > default   - Inside same package, we can access anywhere(other class, subclass)
+        > Public    - Anywhere
+        > final     - Can't be inherited in child class.
+    *** > abstract  - If a class contain at least one abstract method or method implementation is dummy, class also declared as  abstract only.
+                      NOTE: we can't create object for this class, because of abstract class has no proper implementation.
+        > strictfp
+
+    Inner level:
+        > default
+        > Public
+        > final
+    *** > abstract
+        > strictfp
+        > private
+        > protected
+        > static
+
+Method access modifiers:
+    > public
+    > private
+    > abstract      - Has only declaration, not implementation.

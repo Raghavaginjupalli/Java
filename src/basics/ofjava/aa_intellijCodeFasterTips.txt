@@ -1,0 +1,32 @@
+1.To move pointer word by word:
+    CTRL + <--/-->
+
+2.To change the Tabs(opened files):
+    ALT + <--/-->
+
+3. To come line starting and ending:
+    HOME -  Starting position
+    END  -  Ending position
+
+4. To select the matter:
+    Shift + <--/-->             To select letter by letter in line
+    CTRL + Shift + <--/-->      To select word by word in line
+    Shift + END                 To select line until end
+    Shift + up/down arrow       To select line by line in program
+
+    CTRL + W                    To select the block of code
+    NOTE: press again, and again it will select the block.
+
+5. To duplicate the line:
+    place the cursor that you want copy the line     and     CTRL + D
+
+6. To comment the line that you selected:
+    CTRL + /   press again to remove same.
+
+7. To moving a piece of code:
+    SHIFT + ALT + Up/Down
+
+8. To move selected code.
+    TAB          -> to move forward 4 spaces
+
+    SHIFT + TAB  -> to move backward 4 spaces

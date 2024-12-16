@@ -1,0 +1,56 @@
+Code Block Styles:
+    > End-of-line style:
+        public class Hello {
+            public static void main(String[] args) {
+                System.out.println("Hello, World!");
+            }
+        }
+
+    > New-line style:
+        public class Hello
+        {
+            public static void main(String[] args)
+            {
+                System.out.println("Hello, World!");
+            }
+        }
+
+
+
+CODE ERRORS:
+
+    # Compile time Error.
+        These errors occur when the code violates Java's language rules.
+        Detected by the compiler during compilation.
+
+        Examples:
+            Missing semicolon (;).
+            Misspelled keywords (e.g., writing publc instead of public).
+            Using undeclared variables.
+            Top class declared as Private, instead of Public or default.
+
+
+    # Runtime Errors
+        These errors occur while the program is running, after successful compilation.
+        Typically caused by invalid operations or data during execution.
+
+        Examples:
+            Dividing by zero.
+            Accessing an array out of bounds.
+            Null pointer exceptions.
+
+
+    # Logical Errors
+        These errors occur when the program runs without crashing but produces incorrect or unintended results.
+        Caused by mistakes in the program's logic.
+        Not detected by the compiler or during runtime, so debugging is required.
+
+        Example:
+
+            public class Example {
+                public static void main(String[] args) {
+                    int a = 5, b = 10;
+                    int sum = a - b;                        // Logical error (should be a + b)
+                    System.out.println("Sum: " + sum);      // Outputs -5 instead of 15
+                }
+            }

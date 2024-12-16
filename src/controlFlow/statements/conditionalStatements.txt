@@ -1,0 +1,86 @@
+> If Statement:
+    In Java, if conditions are used to execute a block of code only when a specified condition evaluates to true.
+    Ex:
+        if (boolean expression) {
+            // Code to execute if the condition is true
+        }
+
+        boolean expression   : A boolean expression that evaluates to true or false.
+        Code Block  : Enclosed within curly braces {}, it executes only if the condition is true.
+
+> if-else Statement:
+    Executes one block if the condition is true and another block if the condition is false.
+    Ex:
+        if (boolean expression) {
+            // Code if condition is true
+        } else {
+            // Code if condition is false
+        }
+
+> if-else if-else Statement:
+    Checks multiple conditions sequentially.
+    Ex:
+        if (boolean expression) {
+            // Code if condition1 is true
+        } else if (condition2) {
+            // Code if condition2 is true
+        } else {
+            // Code if none of the above conditions are true
+        }
+
+> Nested if Statements:
+    Placing an if statement inside another if.
+    Ex:
+        if (boolean expression) {
+            if (boolean expression) {
+                // Code if condition1 and condition2 are true
+            }
+        }
+
+
+
+Switch Statement:
+    In Java, a switch is a control flow statement that allows a variable to be tested for equality against
+    multiple values, making it an alternative to using multiple if-else statements when comparing a single
+    expression against different values. It improves code readability and reduces complexity in such scenarios.
+
+    NOTE: If-else requires multiple conditional checks that are evaluated sequentially.
+          a switch can use more optimized data structures like jump tables or lookup tables to directly "jump"
+          to the appropriate case. So switch is very fast compare to if-else statement.
+
+    Ex: (Switch statement)
+
+    switch (identifier) {
+            case value1:
+                // Code block for value1
+                break; // Exits the switch statement
+            case value2:
+                // Code block for value2
+                break;
+            // You can have any number of case statements
+            default:
+                // Code block if no case matches
+                break;
+        }
+
+    Ex: (Enhanced Switch statement)
+
+    switch (identifier) {
+            case value1 -> // Code block for value1;
+            case value2 -> // Code block for value2;
+
+            // if you have multiline code block
+            case value3 -> {
+                // Code block for value3;
+                // Code block for value3;
+                // Code block for value3;
+
+                }
+
+            // You can have any number of case statements
+
+            default -> // Code block if no case matches;
+
+        }
+
+    NOTE: In Enhanced Switch you don't need explicitly write break; statement in every code block.

@@ -1,0 +1,26 @@
+In Java, length and length() are used to get the size of different types of data structures, but they are not the same.
+
+length:
+    > It is used for arrays (1D, 2D, or multi-dimensional)
+    > It is not a method
+    > Returns the number of elements in the array.
+
+    int[] arr = {10, 20, 30, 40, 50};
+    System.out.println(arr.length);                 // Output: 5
+
+length() (With Parentheses)
+    > It is used for Strings length finding
+    > It is a Method (because it has parentheses)
+    > Returns the total number of characters in the string (not the array of elements).
+
+    String str = "Hello, World!";
+    System.out.println("Length of the string: " + str.length());    // Output: 13
+
+    for String array:
+         String [] arr = {"rag", "ramana"};
+         System.out.println(arr.length);                 // Output: 2
+         System.out.println(arr[0].length() );           // Output: 3  "rag"
+
+         System.out.println(arr[0].length );             // Error.
+
+

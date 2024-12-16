@@ -1,0 +1,94 @@
+While Loop:
+    In Java, while loop is a control flow statement that repeatedly executes a block of code as long as a specified condition is true.
+    Ex:
+        while (boolean expression) {
+            // Code block to be executed
+        }
+
+    > The condition is checked before the loop body is executed, The boolean expression evaluates to true or false.
+    > The loop continues to execute the code block as long as the expression evaluates to true.
+    > If the condition is false at the start, the body of the loop won't be executed at all.
+
+    NOTE: If the condition always evaluates to true, it creates an infinite loop, so you make sure that the condition.
+
+    While loop:
+        Start
+        ↓
+        Check condition
+        ↘ True  (continue to loop body)
+        ↘ False (exit loop)
+
+        ↓ (continuing)
+
+        Execute loop body
+        ↘
+        Go back to check condition
+
+
+Do while loop:
+    In Java, do-while loop is similar to a while loop, but it guarantees that the loop body will execute at least once,
+    regardless of whether the condition is true or false. This is because the condition is checked after executing the loop body.
+    Ex:
+        do {
+            // Code block to be executed
+        } while (boolean expression);
+
+    > The condition is checked after the loop body is executed, The boolean expression evaluates to true or false.
+    > The loop continues to execute the code block as long as the expression evaluates to true.
+    > The loop body is executed at least once before the condition is checked.
+    > If the condition is false, the loop ends after the first execution.
+
+    Do while loop:
+
+        Start
+        ↓
+        Execute loop body
+        ↓
+        Check condition
+        ↘ True  (go back to loop body)
+        ↘ False (exit loop)
+
+
+For loop:
+    A for loop in Java is a control flow statement that allows code to be executed repeatedly based on a condition.
+    Ex:
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("The value of i is: " + i);
+        }
+
+    Explanation:
+
+        Initialization: int i = 1; — The loop starts with i equal to 1.
+        Condition: i <= 5; — The loop will run as long as i is less than or equal to 5.
+        Update: i++ — After each iteration, i is incremented by 1.
+
+Nested For loop:
+    This allows for the execution of a loop within a loop, which is useful for scenarios like printing patterns,
+    working with 2D arrays, or performing multi-level iterations.
+
+    Ex:
+        for (int i = 1; i <= 5; i++) { // Outer loop
+            for (int j = 1; j <= 5; j++) { // Inner loop
+                System.out.print(i * j + "\t"); // Print product of i and j
+            }
+            System.out.println(); // Move to the next line
+        }
+
+    Explanation:
+        Outer loop: i iterates from 1 to 5.
+        Inner loop: For each i, the inner loop j runs from 1 to 5.
+        Logic: Each combination of i and j is multiplied (i * j), and the result is printed.
+
+
+
+
+Jumped Statements:
+    Break:
+        > The break statement terminates the loop immediately and transfers control to the next statement outside the loop.
+        > It can use Loops, switch statements.
+        > Use this When you want to stop a loop
+
+    Continue:
+        > The continue statement skips the current iteration of the loop and moves to the next iteration.
+        > It can use only in the loops.
+        > Use this When you want to skip an iteration.

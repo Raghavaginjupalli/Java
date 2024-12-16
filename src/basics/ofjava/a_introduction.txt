@@ -1,0 +1,141 @@
+
+>> Java:
+    Java is a high level programming language.
+    a programming language is used to express computations or calculations that can be performed with a computer.
+
+>> Java is having two steps of program execution.
+    > Source Code Compilation   : The source code converted into bytecode.
+    > Bytecode Execution     : Bytecode will execute and display the output.
+
+>> Java source file name:
+    > In java, you can declare any no.of class, at most one public class in one java source file with .java extension.
+    > In that classes, you can give at most one public class only, if you doesn't give a class as a public, you can give any name to file.
+    > But if you give class as a public you must give source file name as a class name only.
+
+    > In source file for suppose you give ('A', 'B', 'c') classes A is public, so the source file name is A.java.
+    > The is main method contained B class. If you compile A.java source file, compiler will create A.class, B.class, C.class files.
+    > In this .class files you can only execute B.class file only, because B class contain main method.
+
+    NOTE: In one source file you can create multiple classes, java compiler will create every class to .class execution file.
+
+
+>> Java is mainly used for platform independent applications. platform - Operating system
+
+    ## Platform independent:
+        Platform independence in Java refers to Java  bytecode will run on any platform (OS) without modification.
+
+        > Source Code Compilation:
+            Java source code (.java files) is written in a human-readable format.
+            The Java Compiler (javac) compiles this source code into an intermediate, and format called bytecode (.class file).
+        
+        > Bytecode Execution:
+            Bytecode is not tied to any specific platform or processor. Instead, it is designed to be executed by the JVM.
+            Each platform (Windows, macOS, Linux, etc.) has its own implementation of the JVM. 
+            This JVM acts as an interpreter between the platform and the Java bytecode.
+        
+        > Write Once Run Anywhere (WORA):
+            Since bytecode is platform-independent and the JVM is platform-specific, motto of Java "Write Once, Run Anywhere" (WORA). 
+            You can write your code on one platform, compile it to bytecode, and run it on any other platform with a compatible JVM.
+
+Key Components:
+
+    Component	                  Purpose	                                        Usage
+    
+    JDK	                Development tools for Java	                    Writing and compiling Java programs
+    JRE	                Runtime environment to execute Java	            Running Java applications
+    JVM	                Executes bytecode on a platform	                Ensures platform independence during execution
+    Java SE	            Core Java for general applications	            Developing desktop and basic server applications
+    Java EE	            Java for enterprise applications	            Developing web-based and large-scale apps
+    Java ME	            Java for embedded systems and mobile	        Mobile app development
+    JavaFX	            Rich UI development	                            Creating graphical applications
+
+
+JDK (Java SE development Kit):
+    By using JDK, we can Write and compile the Java program. developers need JDK to write and compile the program.
+    
+    JDK = JRE + development tools (Javac, Jdb, JavaDoc etc..)
+    
+    > Java Runtime Environment:
+        By using JVM of JRE we can run bytecode(compiled java code) of a java file and get the output.
+        if we want to compile the Java source code, we need Javac (Java compiler).
+
+        JRE = JVM + Java Class Libraries
+            > JVM (Java virtual machine):
+                By using JVM we can run bytecode(compiled java code) of a java file and get the output.
+
+            > Java Class Libraries:
+
+    > Development Tools:
+        1. Compiler (javac):
+            Converts Java source code (.java files) into bytecode (.class files), which can be executed by the Java Virtual Machine (JVM).
+
+            javac HelloWorld.java
+        
+        2. Java Archive Tool (jar):
+            Packages compiled Java files (.class) and resources into a JAR file for easy distribution and deployment.
+        
+            jar cvf MyApp.jar -C classes/ .
+
+        3. Java Debugger(jdb):
+            A command-line tool to debug Java applications. Helps in setting breakpoints, stepping through code, and inspecting variables.
+
+            jdb HelloWorld
+        
+        4. Java Documentation Tool(javadoc):
+            Generates HTML documentation from Java source code based on comments written in Javadoc format.
+
+            javadoc -d docs MyClass.java
+
+
+
+## Java class and Main method.
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+
+    > public class Hello : 
+
+        public: The class is accessible from anywhere. like outside the class and Packages.
+            #NOTE: > The top level class needs to declare with public access modifier, you can't declare with private.
+                   > if you are not using any access modifiers(public, private) it will default as Package-private.
+                   > Package-private (default) means we can access outside class but only in the same package.
+
+        class: class is a keyword to create the classes in Java program.
+        Hello: Hello is the name of the class, and it follows Java’s naming conventions (camel case, starting with an uppercase letter).
+
+    > public static void main(String[] args):
+        This is the entry point of any Java program.
+        
+        Public: Makes the main method accessible from outside the class. The JVM must call this method to start the program.
+        Static: static is a keyword in Java. The JVM can invoke this method without creating an object of the Hello class.
+        Void: Specifies that this method does not return any value to the JVM after it is executed.
+        Main: The name of the method that the JVM looks for when starting a Java application. Without main, the program would not run.
+        String[] args: This parameter is an array of Strings used to pass arguments from the command line to the program.
+
+    > System.out.println("Hello, World!");
+        This is the print statement, it prints the value of inside the statement.
+
+        System: System is a class in the java.lang package. It provides access to system-level functionality,
+                such as standard input, output, and error streams.
+
+        out: out is a static member of the System class.
+        println: println is a method of the PrintStream class. It prints the given argument ("Hello, World!")
+                 to the console and appends a newline (\n) character at the end.
+        
+        "Hello, World!": This is a String literal. It is the text that will be displayed on the console.
+
+Return Type:
+    In Java, the return type of method specifies the type of value the method will return when it is called.
+    It is a part of the method's declaration and comes before the method's name.
+
+    Types of Return Types:
+
+        Primitive Data Types : int, double, char, boolean, etc.
+        Reference Types      : String, arrays, objects of a class, etc.
+        void                 : Indicates that the method does not return a value.
+
+    NOTE: > If a method has a return other than void, it must include a return statement with a value of the specified type.
+          > If the return type is void, the method does not return any value and does not require a return statement.
