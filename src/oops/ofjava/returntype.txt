@@ -1,0 +1,19 @@
+Return Type:
+    In Java, the return type of method specifies what type of value a method will return to the caller.
+    The return type is declared in the method signature before the method name.
+
+    1.Primitive Return Types:
+        A method can return any of the Java primitive types, such as byte, short, int, long, float, double, boolean.
+
+    2. Reference Return Types:
+        Methods can return objects, arrays, or collections as a reference.
+
+    3. Void Return Type:
+        The void return type indicates that a method does not return a value.
+
+
+    Rules:
+        > Consistency: The type of the value returned by the method must match the declared return type.
+        > Return Statement:
+            > For non-void methods, a return statement must exist in all execution paths.
+            > For void methods, the return statement is optional and is used to exit the method early.

@@ -7,7 +7,7 @@ Variables & Constants:
 
         Key Points:
             Variables must be declared with a data type, it can be re-assigned to new values.
-            They can store different types of data such as all Primitive data types and or Strings.
+            It can store different types of data such as all Primitive data types and or Strings.
 
         > dataType variableName;                      // Declaring a variable
 

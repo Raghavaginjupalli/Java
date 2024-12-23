@@ -1,0 +1,152 @@
+> Access Modifiers:
+    In Java, access modifiers are keywords used to set the level of access or visibility for classes, methods, variables,
+    and constructors. by using this, we can control the access, such as from the same class, other classes in the same
+    package, or entirely different packages.
+
+    public:
+        Accessible from anywhere, even from other packages.
+        It Can be used for top-level and inner classes.
+        > Inside of class
+        > Outside of class
+        > Inside of package
+        > Outside of package
+
+    private:
+        Only accessible within the same class (only for inner classes).
+        Cannot be used for top-level classes.
+        > Only Inside of class
+
+    protected:
+        Accessible within the same package anywhere and by subclasses in other packages, but must with child reference.
+        Cannot be used for top-level classes.
+
+    Package-private (default):
+        Accessible only within the same package.
+        Used for top-level classes (no modifier).
+
+
+> Non-access modifiers:
+    1. static
+    The member belongs to the class rather than to any specific instance.
+    Used for methods, variables, and static blocks.
+
+    public class StaticExample {
+        static int x = 50;
+
+        public static void display() {
+            System.out.println("Static method called");
+        }
+    }
+    Usage: StaticExample.display(); (No object required)
+
+    NOTE: when you create nested class as a static, you don't need to create the object for outside classes.
+        Static class:
+            OuterClass.StaticNestedClass obj = new OuterClass.StaticNestedClass();     // Inner class object
+
+        Non-Static class:
+            OuterClass outer_obj = new OuterClass();                // otter class object
+            OuterClass.StaticNestedClass inner_obj = outer_obj.new OuterClass.StaticNestedClass();    // otter.Inner class object
+
+    2. final
+    Variables: Value cannot be changed(constant).
+    Methods: Cannot be method overridden.
+    Classes: Cannot be inherited in child class.
+
+    public final class FinalExample {
+        final int x = 100;
+
+        public final void display() {
+            System.out.println("Final method called");
+        }
+    }
+    Usage: final int x = 10; (Cannot reassign x later)
+
+    3. abstract:
+        It is a keyword, Used to define abstract classes and methods.
+        If any method have no implementation, only declaration that should be declared as abstract method.
+        This method have nobody so, must be overridden in subclasses, and the method end with ";".
+            Ex: abstract void display();
+
+        NOTE: If a class contain at least one abstract method or dummy implementation, the class also need be declared as abstract class.
+
+        abstract class AbstractExample {
+            abstract void display();     // abstract method
+            abstract void another(){     // dummy implementation
+
+            }
+        }
+
+        NOTE: Every abstract method should have overridden in child class, otherwise child class also need to declare as abstract class.
+        > By using abstract method, we can control the child class to use abstract class implementation.
+        > We can restrict the user don't create an object for that abstract class.
+
+
+    4. synchronized
+    Thread-safety for methods and blocks.
+    The method can be accessed by only one thread at a time, making it thread-safe.
+
+    public class SyncExample {
+        public synchronized void display() {
+            System.out.println("Synchronized method called");
+        }
+    }
+
+
+    5. strictfp
+    Ensures precise floating-point calculations on all platforms.
+    Example:
+    strictfp class StrictFPExample {
+        public void calculate() {
+            double x = 10.0 / 3.0;
+            System.out.println(x);
+        }
+    }
+
+
+------------------------------------------- Class, Method, Variable Modifiers ------------------------------------------
+
+NOTE: > Methods  ->  preferred modifiers is Public   (for accessing anyone)
+      > Variable ->  preferred modifiers is Private  (for data hiding)
+
+Class modifiers:
+    Top level:
+        > default   - Inside same package, we can access anywhere(other class, subclass)
+        > Public    - Anywhere
+        > final     - Can't be inherited in child class.
+        > abstract  - If a class contain at least one abstract method or method implementation is dummy, class also declared as  abstract only.
+                      NOTE: we can't create object for this class, because of abstract class has no proper implementation.
+        > strictfp  - Ensures floating-point calculations follow IEEE 754 standards.
+
+    Inner level:
+        > default   - Inside same package, we can access anywhere.
+        > Public    - Anywhere
+        > final     - Can't be inherited in child class.
+        > abstract  - If a class contain at least one abstract method or method implementation is dummy, class also declared as  abstract only.
+                      NOTE: we can't create object for this class, because of abstract class has no proper implementation.
+        > strictfp  - Ensures floating-point calculations follow IEEE 754 standards.
+        > private   - Same class only
+        > protected - Same class, same package, and also work child class of other package.
+        > static    - In the inner class object creation, no need of outer class object.
+
+Method modifiers:
+    > default       - Inside same package, we can access anywhere.
+    > public        - Anywhere.
+    > private       - Same class only.
+    > protected     - Same class, same package, and also work child class of other package with child class reference.
+
+    > abstract      - Has only declaration, not implementation.
+    > static        - No need to create an object for the class, to use this method.
+                      we can directly call the method, followed by  the claas name.
+    > final         - Cannot be method overridden in child class.
+    > synchronized  - The method can be accessed by only one thread at a time, making it thread-safe.
+
+
+Variable modifiers:
+    > public        - Anywhere.
+    > private       - Same class only it declared.
+    > protected     - Same class, same package, and also work child class of other package.
+
+    > static        - It is class level variable, it is shared across all instances of the class,
+                      meaning there is only one copy of the variable, no matter how many objects are created.
+
+    > final         -  The variable cannot be reassigned once it is initialized.

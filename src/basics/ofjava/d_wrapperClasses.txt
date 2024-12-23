@@ -1,10 +1,11 @@
 Wrapper classes:
 
     > Wrapper classes in Java are object representations of primitive data types.
-    > They "wrap" the primitive data types in an object.
-    > Every primitive data type has its own wrapper class.
+    > They "wrap" the primitive data types in an object, Every primitive data type has its own wrapper class.
+    > By using wrapper class we can provide several utility methods for the primitive data types.
 
     Byte:
+
             Method	                            Description
      Byte.valueOf(String s)	            Converts a String to a Byte.
      Byte.valueOf(byte b)	            Converts a byte to a Byte.
@@ -14,6 +15,7 @@ Wrapper classes:
 
 
     Short:
+
             Method	                            Description
      Short.valueOf(String s)	        Converts a String to a Short.
      Short.valueOf(short s)	            Converts a short to a Short.
@@ -22,6 +24,7 @@ Wrapper classes:
      short minShort = Short.MIN_VALUE;  Give Min value can take the Short wrapper class
 
     Integer:
+
             Method	                            Description
      Integer.valueOf(String s)	        Converts a String to an Integer.
      Integer.valueOf(int i)	            Converts an int to an Integer.
@@ -34,6 +37,7 @@ Wrapper classes:
      int minInt = Integer.MIN_VALUE;    Give Min value can take the int wrapper class
 
     Long:
+
             Method	                            Description
      Long.valueOf(String s)	            Converts String to Long.
      Long.valueOf(long l)	            Converts long to Long.
@@ -45,6 +49,7 @@ Wrapper classes:
      long minLong = Long.MIN_VALUE;     Give Min value can take the long wrapper class
 
     Float:
+
              Method	                            Description
      Float.valueOf(String s)	        Converts a String to a Float.
      Float.valueOf(float f)	            Converts a float to a Float.
@@ -56,6 +61,7 @@ Wrapper classes:
      float minFloat = Float.MIN_VALUE;
 
     Double:
+
              Method	                            Description
      Double.valueOf(String s)	        Converts a String to a Double.
      Double.valueOf(double d)	        Converts a double to a Double.
@@ -67,6 +73,7 @@ Wrapper classes:
      double minDouble = Double.MIN_VALUE;
 
     Character:
+
               Method	                        Description
      Character.isDigit(char ch)	        Checks if the character is a digit.
      Character.isLetter(char ch)	    Checks if the character is a letter.
@@ -77,6 +84,7 @@ Wrapper classes:
      Character.isLowerCase(char ch)	    Checks if the character is lowercase.
 
     Boolean:
+
                 Method	                         Description
      Boolean.valueOf(String s)	        Converts a String to a Boolean object.
      Boolean.parseBoolean(String s)     Parses a String into a boolean.

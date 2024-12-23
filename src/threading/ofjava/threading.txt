@@ -1,0 +1,27 @@
+Java Thread Implementation:
+    In Java, threads can be created and managed using the Thread class and the Runnable interface,
+    which are part of the java.lang package.
+
+
+    Threading:
+        Threads allows a program to operate more efficiently by doing multiple things at the same time.
+        Threads can be used to perform complicated tasks in the background without interrupting the main program.
+
+    Multithreading:
+        > Multithreading in Java allows concurrent execution of two or more threads for maximum utilization of CPU resources.
+        > Each thread runs independently, sharing the process memory.
+        > It is a core part of Java's concurrency features and is used to perform multitasking in a single application.
+
+
+    Thread Methods:
+        > start():              Starts the thread, putting it in the runnable state.
+
+        > run():                Contains the code that the thread executes.
+
+        > sleep(milliseconds):  Suspends the thread for a specific time.
+
+        > join():               Waits for the thread to finish execution.
+
+        > yield():              Pauses the currently executing thread to allow other threads to execute.
+
+        > isAlive():            Checks if the thread is still running.

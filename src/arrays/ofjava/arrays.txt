@@ -23,7 +23,7 @@ Single-dimensional:
             Ex: arrayName = new dataType[size];
                 arrayName = new dataType[0];  is valid.
 
-            If you create    an array the default value are
+            If you create an array the default value are
                     > Numeric primitive datatype - "0"
                     > Floating    - " 0.0 "
                     > Characters  - " \u0000 "
@@ -99,7 +99,7 @@ Two-dimensional array:
 
         Errors:
     dataType a[],[]b;                   // we can do like this dataType a[],b[];
-                  Ok  X
+              Ok  X
 
     dataType a[],[]b, []c;              // we can do like this dataType a[],b[], c[];
               Ok  X    X
@@ -130,14 +130,14 @@ Single-dimensional:
 Two-dimensional:
     Ex: datatype[][] arrayName = new dataType[4][2];
 
-    NOTE: after creating the array without values, if we want to access the array
+    NOTE: after fully creating the array without values, if we want to access the array
     > System.out.println(arrayName);               // Display the class name @ and memory location
     > System.out.println(arrayName[i]);            // Display the class name @ and memory location
     > System.out.println(arrayName[i][j]);         // Display the default value of type of array.(like 0, 0.0, \u0000, false..)
 
     Ex: datatype[][] arrayName = new dataType[4][];
 
-        NOTE: after creating the array without values, if we want to access the array
+        NOTE: after partially creating the array without values, if we want to access the array
         > System.out.println(arrayName);               // Display the class name @ and memory location
         > System.out.println(arrayName[i]);            // Display the "null", because nested array we are not specified.
         > System.out.println(arrayName[i][j]);         // null pointer exception, because accessing null value.

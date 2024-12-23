@@ -1,6 +1,6 @@
-package basics.ofjava.programs;
+package iostreams.ofjava.programs;
 
-public class PrintStatements {
+public class ConsoleOutput {
 
     public static void main(String[] args) {
 

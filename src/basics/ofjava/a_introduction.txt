@@ -8,12 +8,12 @@
     > Bytecode Execution     : Bytecode will execute and display the output.
 
 >> Java source file name:
-    > In java, you can declare any no.of class, at most one public class in one java source file with .java extension.
-    > In that classes, you can give at most one public class only, if you doesn't give a class as a public, you can give any name to file.
-    > But if you give class as a public you must give source file name as a class name only.
+    > In java, you can declare any no.of class, at-most one public class in one java source file with .java extension.
+    > In that classes, you can give at-most one public class only, if you doesn't give a class as a public, you can give any name to file.
+    > But if you give class as a public you must give source file name as a public class name only.
 
     > In source file for suppose you give ('A', 'B', 'c') classes A is public, so the source file name is A.java.
-    > The is main method contained B class. If you compile A.java source file, compiler will create A.class, B.class, C.class files.
+    > The main method contained in B class. If you compile A.java source file, compiler will create A.class, B.class, C.class files.
     > In this .class files you can only execute B.class file only, because B class contain main method.
 
     NOTE: In one source file you can create multiple classes, java compiler will create every class to .class execution file.

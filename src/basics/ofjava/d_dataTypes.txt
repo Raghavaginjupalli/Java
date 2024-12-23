@@ -88,7 +88,12 @@ To find the data type storing range (Byte, Short, Int, Long):
 
 DataType stores other data type:
 
-    # NOTE: floating point values can't store in integer values.
+    # NOTE: > floating point values can't store in integer values in implicitly.
+            > if we want to store we must go for type casting, may lead data loss.
+
+            narrow to wider ---> auto type conversation, not data loss.
+            wider to narrow ---> explicit type casting, may lead data loss.
+
     byte   > only byte
     short  > byte and short
     int    > byte, short and int

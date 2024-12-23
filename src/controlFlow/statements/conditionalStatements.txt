@@ -9,7 +9,7 @@
         Code Block  : Enclosed within curly braces {}, it executes only if the condition is true.
 
 > if-else Statement:
-    Executes one block if the condition is true and another block if the condition is false.
+    Executes block if the condition is true and another block if the condition is false.
     Ex:
         if (boolean expression) {
             // Code if condition is true

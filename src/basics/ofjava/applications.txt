@@ -1,0 +1,35 @@
+Java:
+    > Java SE / J2SE:
+        > Java 2 standard edition, it contains java fundamental concepts.
+        > by using this we can be able built Standalone Applications.
+
+        Standalone Application:
+            If we design and execute any application without using Client-server architecture  or
+            without distributing application logic into multiple machines then that is called as Standalone Application.
+
+    Java EE / J2EE:
+        > Java 2 enterprise application, it contains server side programing.
+        > By using Java EE we can be able to build Enterprise/Distributed applications.
+
+        Enterprise Application/ Client-Server:
+            If we design and execute any application on the basis of Client-server architecture  or  distributing
+            application logic over multiple machines then that is called as Enterprise Application.
+
+    Java ME / J2ME:
+        > Java 2 Micro Edition, we can be able built Mobile application.
+
+        Mobile Application:
+            If we design and execute any application on the basis of Mobile H/W system then that is called as Mobile Application.
+
+
+
+Java provide Web security By using (JAAS):
+    Java authentication & Authorization Service
+
+Distribute Application:
+    Java provide distribute application by using J2EE/JAVA EE Module.
+
+Java is Multithreaded:
+    Java allows to create and execute more than one thread at a time.
+
+

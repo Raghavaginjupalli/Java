@@ -31,14 +31,39 @@ Java Naming Conventions:
 
 
 
-    *******static method
+    ******  static method
+    ******  constructors
+    ******  Object type arrays
+    ******  interfaces
+    ******  enums
+
+
 
     Divisible outputs
-    return type
+    return type / print statements
+    Math module
     chr and int data type storing
     wrapper class
     object reusing concept
-    Object type arrays
+    abstraction
+    encapsulation
+    difference between import and inheritance?
+    P p = new P();
+    C c = new C();
+    P p = new C();
+    what is reference, what is object?
+    object type casting
+    input/output (i/o)
 
+
+
+************** collections
+************** multi threading
+    > exception handling
+    > java 8 features:
+        lambda expression
+        streams API
+        Functional interface
+    > memory management
 
 

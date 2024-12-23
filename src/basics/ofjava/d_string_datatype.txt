@@ -22,7 +22,6 @@ String Static methods:
          String formatted = String.format("My name is %s and I am %d years old.", "John", 30);
          System.out.println(formatted);         // Output: My name is John and I am 30 years old.
 
-
     3.join():
 
         Joins multiple strings with a specified delimiter and returns the resulting string.
@@ -39,7 +38,7 @@ String Static methods:
         char[] chars = {'H', 'e', 'l', 'l', 'o'};
         String str = String.copyValueOf(chars);
         System.out.println(str);                // Output: Hello
-
+        NOTE: Same as valueOf() method, take any input and convert into String, but here only take char array.
 
 
 String object methods:
@@ -53,7 +52,7 @@ String object methods:
     2.charAt(int index)                         Returns the character at the specified index.
     "Java".charAt(1) → 'a'
 
-    3.substring(int beginIndex)	                Returns a substring starting from the given index.
+    3.substring(int beginIndex)	                Returns a substring starting from the given index till end.
     "Hello".substring(2) → "llo"
 
     4.substring(int begin, int end)             Returns a substring within the specified range.
@@ -68,7 +67,7 @@ String object methods:
     7.contains(CharSequence s)	                Checks if the string contains the specified sequence.
     "Java".contains("av") → true
 
-    8.equals(Object another)	                Compares two strings for equality.
+    8.equals(Object another)	                Compares two strings equality with case also.
     "Java".equals("Java") → true
 
     9.equalsIgnoreCase(String s)	            Compares strings ignoring case differences.
@@ -83,30 +82,23 @@ String object methods:
     12.trim()	                                Removes leading and trailing whitespace.
     " Java ".trim() → "Java"
 
-    13.indexOf(char ch)	                        Returns the index of the first occurrence of a character.
-    "Java".indexOf('a') → 1
-
-    14.concat(String str)	                    Concatenates two strings.
+    13.concat(String str)	                    Concatenates two strings.
     "Hello".concat(" World") → "Hello World"
 
-    15. indexOf(int ch) / indexOf(String str)   Returns the first occurrence of the character or substring index.
+    14.indexOf(int ch) / indexOf(String str)    Returns the first occurrence of the character or substring index.
     String str = "Hello";
     int index = str.indexOf('e'); // 1
     int notFound = str.indexOf('x'); // -1
 
-    16. lastIndexOf(int ch) / lastIndexOf(String str)           Returns the last occurrence of the character or substring index.
+    15.lastIndexOf(int ch) / lastIndexOf(String str)           Returns the last occurrence of the character or substring index.
     Same as a indexOf() method, it returns last index occurrence
 
-    17. startsWith(String prefix) / endsWith(String suffix)     Checks if the string starts or ends with the specified prefix/suffix.
+    16.startsWith(String prefix) / endsWith(String suffix)     Checks if the string starts or ends with the specified prefix/suffix.
     String str = "Hello";
     boolean starts = str.startsWith("He"); // true
     boolean ends = str.endsWith("lo");    // true
 
-    18. split(String regex)                      Splits the string into an array based on the given regular expression.
-    String str = "one,two,three";
-    String[] parts = str.split(","); // ["one", "two", "three"]
-
-    19. isEmpty()                                Checks if the string is empty (length() == 0).
+    17.isEmpty()                                Checks if the string is empty (length() == 0).
     String str = "";
     boolean empty = str.isEmpty(); // true
 

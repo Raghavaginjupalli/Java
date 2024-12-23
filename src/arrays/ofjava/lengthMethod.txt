@@ -1,7 +1,7 @@
 In Java, length and length() are used to get the size of different types of data structures, but they are not the same.
 
 length:
-    > It is used for arrays (1D, 2D, or multi-dimensional)
+    > It is used for arrays (1D, 2D, or multidimensional)
     > It is not a method
     > Returns the number of elements in the array.
 

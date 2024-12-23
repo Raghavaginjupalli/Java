@@ -1,0 +1,137 @@
+
+Abstraction:
+    Abstraction in Java is the process in which we only show essential details and hiding the implementation details to the user.
+
+        > In Java, abstraction is achieved by interfaces and abstract classes.
+        > We can achieve 100% abstraction using interfaces.
+        > If a class contain at-most one abstract method or dummy implementation class need be declared as abstract class.
+        > An abstract class is a class that is declared with an abstract keyword.
+        > An abstract method is a method that is declared without implementation.
+        > A abstract method must always be redefined in the subclass, thus making overriding.
+        > If you didn't provide implementation in the subclass, it also declared as abstract class.
+        > There can be no object of an abstract class. That is, an abstract class can not be directly instantiated with the new operator.
+        > An abstract class can have parameterized constructors and the default constructor is always present in an abstract class.
+
+Encapsulation:
+    Java Encapsulation is a way of hiding the implementation details of a class from outside access and
+    only exposing a public interface that can be used to interact with the class.
+
+        > In Java, encapsulation is achieved by declaring the instance variables of a class as private.
+        > This variables can only be accessed within the class, for outside access of this, public methods getters and setters are defined.
+        > By using this we can retrieve and modify the values of the instance variables, respectively.
+        > By using getters and setters, the class can enforce its own data validation rules and ensure that its internal state remains consistent.
+
+Inheritance:
+    It is the mechanism in Java by which one class is allowed to inherit the all fields and methods of another class.
+    In Java, A class that inherits from another class can reuse the methods and fields of that class.
+
+        >  By using inheritance only we achieve the method overriding(Polymorphism) and Abstract classes.
+        > Super Class/Parent Class: The class whose features are inherited is known as a super/parent class.
+        > Sub Class/Child Class: The class that inherits the other class is known as a subclass/child class.
+
+        NOTE: The subclass can add its own fields and methods in addition to the superclass fields and methods.
+
+    1 single inheritance: one parent and one child class
+    2 multilevel inheritance : Grand parent, parent and child class.
+    3 hierarchical inheritance: one parent and multiple child classes
+
+    4 multiple Inheritance(only in interfaces) : multiple parents and single child class
+    5 Hybrid Inheritance(only in interfaces)   : it is combination of all inheritance types.
+
+Polymorphism:
+    It allows us to perform a single action in different ways. The word “poly” means many and “morphs” means forms, So it means many forms.
+
+    1 Compile-time Polymorphism: (Method overloading)
+        When there are multiple functions with the same name but different parameters then these are said to be overloaded.
+
+***** In overloading, for method call exact parameter get more chance compare to others.
+
+        Case -1: > In overloading, when method call you don't provide exact data type parameter, automatically compiler will promote to next level.
+             > after all possible promotions also doesn't match then compile through error.
+
+        promotion chart:
+                    char ↘
+          byte -> short ->↘ int -> long -> float -> double
+
+        > m1(int i, float f)  1
+        > m1(float f, int i)  2
+
+            1 obj.m1(10, 3.4f)    --> 1 method
+            2 obj.m1(10.4f, 8)    --> 2 method
+            3 obj.m1(10, 10)      --> error.  By default, no matched by promotion both methods are matched, so no one executed.
+            NOTE: we have only one then it will execute the method by promotion.
+
+
+        Case -2: > In overloading, when methods have general and var-arg method, if exact parameter is matched general otherwise var-arg method will execute.
+
+            general: m1(int num) (exact parameter required)
+            var-arg: m1(int... num) (give or null either work)
+
+            1 obj.m1()        --> var-arg (null)
+            2 obj.m1(10)      --> general (exact parameter)
+            3 obj.m1(10,12)   --> var-arg (two parameters)
+
+
+    2 Runtime Polymorphism: (Method overriding)
+        When a parent class method is override(re implementation ) in its child class then we said it is method overriding.
+        NOTE:
+
+            ref     object
+            P p = new P();
+            p.m1();     parent method
+
+            ref     object
+            C c = new C();
+            c.m1();     child method
+
+            ref     object
+            P p = new C();
+            p.m1();     Child method only.
+
+        NOTE: if we override the parent method in child then, based on the object class method will execute.
+
+        Rules:
+            > Method name, argument must be same.
+            > Method return type need be same(primitive) or co-variant(subtype) also fine in object types.
+                co-variants:
+                    object  --> String/StringBuffer...
+                    Number  --> Byte/Short/Int/Long/Float/Double
+
+            > In overriding concept is not applicable for private and final modifiers methods.
+                private -> it is not available outside of class
+                final   -> it is the final method, you can't re declare anywhere.
+
+            > In overriding concept is not available for (static -> non-static) & (non- static -> static)
+                static  -> it is class level, overriding to non-static(object level) is not allow.
+
+*********** we can call compile time polymorphism
+            > (static -> static) is applicable, but not an overriding, it is method hiding.
+                Means method is executed by reference method, not object method.
+
+                     method overriding:                                 method hiding:
+                    ref     object                                      ref     object
+                                                                        P p = new P();
+                    P p = new P();                                      p.m1();     parent method
+                    p.m1();     parent method
+
+                    ref     object                                      ref     object
+                    C c = new C();                                      C c = new C();
+                    c.m1();     child method                            c.m1();     child method
+
+                    ref     object                                      ref     object
+                    P p = new C();                                      P p = new C();
+                    p.m1();     Child method only.                      p.m1();     parent method.
+
+            > In overriding concept the scope of method you can't decrease, instead you can increase the scope.
+                public > protected > default > private
+
+                public    -> only public
+                protected -> protected, public
+                default   -> default, protected, public
+
+                NOTE: Not applicable for private methods.
+
+            > In overriding concept the var-arg method is need override with var-arg only, if you try with general
+            it will be overloading not overriding.
+
+        variable overriding:

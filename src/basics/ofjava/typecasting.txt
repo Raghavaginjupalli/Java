@@ -1,0 +1,23 @@
+Type casting:
+    Type casting in Java is the process of converting one data type into another.
+    It can be broadly categorized into two types Widening Casting (Implicit) and Narrowing Casting (Explicit).
+
+1. Widening Casting (Implicit Casting):
+    Converting a smaller data type to a larger data type automatically. It's safe because no data loss occurs.
+    Ex:
+        int --> long (or) float --> double
+
+        int num = 100;
+        long bigNum = num;          // int to long
+        float floatNum = num;       // int to float
+        NOTE: It will convert automatically, there is no data loss.
+
+2. Narrowing Casting (Explicit Casting)
+    Converting a larger data type to a smaller data type explicitly. May lead to data loss if the value exceeds the range of the smaller type.
+    Ex:
+        double --> int (or) long --> short
+
+        double num = 100.99;
+        int smallerNum = (int) num;     // double to int
+
+        NOTE: It needs to convert explicitly, may lead the data loss.
