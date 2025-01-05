@@ -1,0 +1,42 @@
+Hibernate:
+    Hibernate is an open-source Object-Relational Mapping (ORM) framework for Java applications.
+    It simplifies database interactions by mapping Java objects to relational database tables,
+    allowing developers to work with high-level object-oriented concepts instead of direct database queries.
+
+
+Key Features of Hibernate:
+
+    Object-Relational Mapping (ORM):
+        Hibernate maps Java classes to database tables and Java data types to SQL data types, bridging the gap between object-oriented programming and relational databases.
+
+    Hibernate Query Language (HQL):
+        An object-oriented query language similar to SQL, HQL allows for database-independent queries, facilitating easier database migrations.
+
+    Automatic SQL Generation:
+        Hibernate generates SQL queries automatically, reducing the need for manual query writing and minimizing errors.
+
+    Transaction Management:
+        It provides comprehensive transaction management, ensuring data integrity and consistency.
+
+    Lazy Loading:
+        Hibernate supports lazy loading, fetching related data only when it's actually needed, which can improve performance.
+
+    Caching:
+        It includes a caching mechanism to optimize database access and enhance application performance.
+
+Benefits of Using Hibernate:
+
+    Database Independence:
+        Hibernate abstracts the database layer, making it easier to switch between different databases without significant code changes.
+
+    Reduced Boilerplate Code:
+        By handling repetitive tasks like result set parsing and data conversion, Hibernate allows developers to focus on business logic.
+
+    Improved Productivity:
+        With features like automatic table generation and schema validation, Hibernate accelerates development processes.
+
+
+
+Features of Hibernate ORM:
+    > Hibernate ORM provides its own native API, in addition to full JPA(Java Persistence API) supports.
+    > It maps java POJO's (Plain Old java Object) to relational database.

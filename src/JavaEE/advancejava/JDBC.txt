@@ -1,0 +1,58 @@
+JDBC( Java Database Connectivity ):
+    > JDBC is an API(Application programming interface) used in Java programming to interact with databases.
+    > The classes and interfaces of JDBC allow the application to send requests made by users to the specified database.
+
+Purpose of JDBC
+    > Enterprise applications created using the JAVA EE technology need to interact with databases to store
+      application-specific information.
+    > So, interacting with a database requires efficient database connectivity, which can be achieved
+      by using the ODBC(Open database connectivity) driver.
+    > This driver is used with JDBC to interact or communicate with various kinds of databases such as Oracle,
+      MS Access, Mysql, and SQL server database.
+
+Main components of JDBC:
+    1. JDBC API:
+        The core interface that allows Java applications to communicate with databases.
+        Contains classes and methods for establishing connections, executing queries, and processing results.
+
+    2. JDBC Drivers:
+        Software components that implement the JDBC API for a specific database.
+        Types of JDBC drivers:
+            Type 1: JDBC-ODBC Bridge Driver (connects to ODBC drivers).
+            Type 2: Native-API Driver (uses database-specific client-side libraries).
+            Type 3: Network Protocol Driver (translates JDBC calls to database-independent protocols).
+            Type 4: Thin Driver (directly communicates with the database using database-native protocols).
+
+    3. Connection:
+        Represents a session between a Java application and the database.
+        Used to establish communication and manage transactions.
+
+    4. Statement:
+        Used to execute SQL queries.
+        Types:
+            Statement: Executes simple SQL queries.
+            PreparedStatement: Precompiled SQL statement for repeated execution with parameters.
+            CallableStatement: Used for executing stored procedures.
+
+    5. ResultSet:
+        Represents the result of a SQL query.
+        Provides methods to iterate through the rows and access column values.
+
+    6. DriverManager:
+        Manages a list of database drivers.
+        Helps establish a connection to the database by selecting the appropriate driver.
+
+    7. DataSource:
+        Alternative to DriverManager for establishing connections.
+        Provides connection pooling and distributed transaction capabilities.
+
+    8. SQL Exception Handling:
+        Handles database-related errors during runtime.
+        Encapsulated in the SQLException class.
+
+    9. Transaction Management:
+        Provides methods to commit or rollback a series of operations.
+        Ensures consistency and integrity of data.
+
+    10. Metadata:
+        DatabaseMetaData: Provides information about the database (e.g., supported SQL features, table structures).

@@ -1,0 +1,34 @@
+Bean:
+	> In Spring, a Beans is simply an object that are created, configured, and managed by the Spring IoC container. 
+	> These objects are typically components of your application, and Spring's job is to handle their lifecycle, dependencies, and configuration.
+	
+
+	Configuration:
+
+		> Beans are typically defined in XML files (such as beans.xml) or through Java annotations.
+		> They are configured with information like their properties like(id= "bean name", class="Class_with_Package", Scope"bean_scope").
+		> In modern SpringBoot, Java-based configuration with @Configuration classes and @Bean annotations is commonly used.
+		
+		NOTE:A bean can be defined either in an XML configuration file, in a Java configuration class, or by using annotations.
+
+	Bean Lifecycle:
+
+		Instantiation       : The container instantiates the bean.
+		Dependency Injection: The container injects any dependencies the bean may have.
+		Initialization      : Any initialization code defined for the bean is executed.
+		Destruction         : The container cleans up the bean when it is no longer needed (if a destroy-method is defined or the context is closed).
+		
+	Bean Scope:
+
+		The scope of a Spring Bean defines the lifecycle of that bean:
+			> Singleton (default): One single instance of the bean is created and shared across the application.
+				NOTE: In the singleton if you ask the object or not, Spring will create the object inside the container
+			> Prototype: A new instance of the bean is created each time it is requested.
+				NOTE: In the prototype if you ask the object only spring will create the object inside the container, otherwise not.
+			
+			> Request: A new bean instance is created for each HTTP request (used in web applications).
+			> Session: A new bean instance is created for each HTTP session (used in web applications).
+			> Global Session: A new bean instance is created for each global HTTP session (used in portlet-based web applications).
+
+	
+

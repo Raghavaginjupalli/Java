@@ -1,0 +1,129 @@
+Configuration(beans.xml):    
+	
+	> Default bean:
+    
+		<bean id="demo" class="com.demo.Demo"></bean> 
+		
+		id: bean name (object name)
+		class: object for witch class with package name also.
+		Scope: By default "singleton"
+		constructor: called default constructor.
+	
+	> Varible & constructor values assigning(Primitive & String value):
+	
+		NOTE: > If your class have only parameters constructor, you need to provide the default value.
+			  > You can give in the class by default values or inside bean configuration default values.
+	
+		<bean id="demo" class="com.demo.Demo">
+			<constructor-arg value="12"></constructor-arg>
+			<property name ="age" value="10"></property>
+		</bean> 
+		
+		id: bean name (object name)
+		class: object for witch class with package name also.
+		Scope: By default "singleton"
+		constructor-arg: constructor parameters
+			value: variable value(if primitive or String).
+		property: every variable and object ref of inside this class is property.
+			name: variable name.
+			value: variable value(if primitive or String).
+		
+		
+	> Object ref value assigning(Object value):
+		
+		// Demo class bean
+		<bean id="demo" class="com.demo.Demo">				
+			<property name ="age" ref="laptop"></property>
+		</bean> 
+		
+		// Laptop class bean
+		<bean id="laptop" class="com.demo.Laptop"></bean> 
+		
+		id: bean name (object name)
+		class: object for witch class with package name also.
+		Scope: By default "singleton"
+		property: every variable and object ref of inside this class is property.
+			name: variable name.
+			ref: object name of class that you want to assign.
+			
+			
+**********************************************************************************************************************************************************
+
+			
+	Ex: My Interface Computer object(com), it implements Laptop and Desktop classes.
+	If i want to use Computer interface object ref and to create object for it's implements classes of Laptop, Desktop.
+	
+	In the Configuration,  I create both the beans for Laptop and Desktop classes.
+	how spring assin object for my  Computer interface object ref
+
+		> Interface value assigning(Object value):  object manully specifying
+				
+			<bean id="demo" class="com.demo.Demo">
+				<property name="com" ref="laptop">  </property>  
+				  
+			</bean>
+
+			<bean id="laptop" class="com.demo.Laptop"> </bean>
+			<bean id="desktop" class="com.demo.Desktop"> </bean>
+			
+			
+			id: bean name (object name)
+			class: object for witch class with package name also.
+			Scope: By default "singleton"
+			property: every variable and object ref of inside this class is property.
+				name: object reference name.(Computer interface)
+				ref: object name of class that you want to assign.
+				
+				
+		> Interface value assigning(Object value): (autowire ="byName") 
+		
+			object automatically spring identifyting by it's name, object ref name is "com".
+				
+			<bean id="demo" class="com.demo.Demo" autowire="byName" > </bean>
+
+			<bean id="com" class="com.demo.Laptop"> </bean>
+			<bean id="desktop" class="com.demo.Desktop"> </bean>
+			
+			
+			id: bean name (object name)
+			class: object for witch class with package name also.
+			Scope: By default "singleton"
+			autowire: object automatically spring identify.
+				byName: if interface object ref is name matched any object that implements this interface,
+					    it will automatically select that class object(bean).
+						
+			id: bean name (object name) but here same as interface ref object name as well.
+			class: object for witch class with package name also, laptop is implemented Computer interface.
+			
+			id: bean name (object name) but here not same as interface ref object.
+			class: object for witch class with package name also, desktop is implemented Computer interface.
+			
+						
+						
+		> Interface value assigning(Object value): (autowire ="byType" and primary = "true") if more then one bean same type.
+		
+			object automatically spring identifyting by it's implemented class objects, 
+			Computer interface implements two classes laptop and desktop, so both are same Computer type only.
+			but if you implemented classes we can use only one, by making (primary = "true")
+				
+			<bean id="demo" class="com.demo.Demo" autowire="byName" > </bean>
+
+			<bean id="laptop" class="com.demo.Laptop" primary="true"> </bean>
+			<bean id="desktop" class="com.demo.Desktop"> </bean>
+			
+			
+			id: bean name (object name)
+			class: object for witch class with package name also.
+			Scope: By default "singleton"
+			autowire: object automatically spring identify.
+				byType: laptop and desktop classes are implemented Computer interface,
+						So both laptop and desktop class objects are same Computer type.
+				
+				NOTE: If you have same type objects, we must specify object as primary.
+					    			
+			id: bean name & same type because implemented the interface, but here not same as interface ref object name .
+			class: object for witch class with package name also, laptop is implemented Computer interface.
+			
+			id: bean name & same type because implemented the interface, but here not same as interface ref object name .
+			class: object for witch class with package name also, desktop is implemented Computer interface.
+			

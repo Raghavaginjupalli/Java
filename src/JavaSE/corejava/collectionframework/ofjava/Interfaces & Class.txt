@@ -1,0 +1,124 @@
+java.util.package
+     |
+     ├── Collection (Interface)
+     |      |
+     |      ├── List (Interface)                        [Ordered, allows duplicates]
+     |      |    |
+     |      |    ├── ArrayList (Class)                  [Resizable array implementation]
+     |      |    |
+     |      |    ├── LinkedList (Class)                 [Doubly-linked list implementation]
+     |      |    |
+     |      |    └── Vector (Class)                     [Synchronized, legacy]
+     |      |          |
+     |      |          └── Stack (Class)                [LIFO stack implementation]
+     |      |
+     |      |
+     |      ├── Set (Interface)                         [Unordered, no duplicates]
+     |      |    |
+     |      |    ├── HashSet (Class)                    [Hash table-based implementation]
+     |      |    |    |
+     |      |    |    └── LinkedHashMap (Class)         [Hash table + linked list for order]
+     |      |    |
+     |      |    └── SortedSet (Interface)              [Maintains natural order or custom order]
+     |      |           |
+     |      |           └── TreeSet (Class)             [Red-Black tree implementation]
+     |      |
+     |      └── Queue (Interface)                       [FIFO or priority-based ordering]
+     |            |
+     |            ├── PriorityQueue (Class)             [Priority queue implementation]
+     |            |
+     |            └── Deque (Interface)                 [Resizable-array implementation]
+     |                  |
+     |                  ├── ArrayDeque (Class)          [Resizable-array implementation]
+     |                  |
+     |                  └── LinkedList (Class)          [Also implements List]
+     |
+     |
+     |
+     └── Map (Interface)                                [Key-value pairs]
+            |
+            ├── HashTable (Class)
+            |
+            ├── HashMap (Class)                         [Hash table-based implementation]
+            |     |
+            |     └── LinkedHashMap (Class)             [Hash table + linked list for order]
+            |
+            └── SortedMap (Interface)                   [Maintains natural/custom order]
+                   |
+                   └── TreeMap (Class)                  [Red-Black tree implementation]
+
+
+
+
+** Collection:
+    If we want to represent a group of individual objects as single entity, then we should go for Collection.
+
+** Collection Framework:
+    A group of classes and interfaces to represent group of objects as a single entity is collection framework.
+
+** Collections(C):
+    collections is aa utility class present in java.util.package to define several utility methods
+    (like sorting, searching etc.) for collection objects.
+
+
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+    ** List(Interface): list is a child interface of collection interface.
+       If we want to represent a group of individual objects as single entity where duplicates are allowed and storing the
+       elements as per the insertion order then we should go for List.
+            |
+            ├── ArrayList (Class)
+            |
+            ├── LinkedHashSet (Class)
+            |
+            └── Vector (Class)
+                   |
+                   └── Stack (Class)
+
+    ** Set(Interface): set is a child interface of collection interface.
+       If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+       the insertion order is not required then we should go for Set.
+            |
+            ├── HashSet (Class)
+            |    |
+            |    └── LinkedHashMap (Class)
+            |
+            └── SortedSet (Interface)
+                   |
+                   └── TreeSet (Class)
+
+    ** Queue(Interface): Queue is a child interface of collection interface.
+       If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+       the insertion order is not required then we should go for Set.
+            |
+            ├── PriorityQueue (Class)
+            |
+            └── Dequeue (Interface)
+                   |
+                   └── ArrayDequeue (Class)
+
+** Map(Interface): map is an interface, collection is not a root for map interface, instead collection & Map are same level.
+    If we want to represent a group of individual objects as key value pairs where duplicates keys are not allowed
+    but values can be duplicated then we should go for Map.
+            |
+            ├── HashTable (Class)
+            |
+            ├── HashMap (Class)
+            |     |
+            |     └── LinkedHashMap (Class)
+            |
+            └── SortedMap (Interface)
+                   |
+                   └── TreeMap (Class)
+
+        ** SortedMap(Interface): If we want to represent a group of individual objects as key value pairs according to the same
+                      sorting order of keys then we should go for SortMap.
+                  |
+                  └── TreeMap (Class)

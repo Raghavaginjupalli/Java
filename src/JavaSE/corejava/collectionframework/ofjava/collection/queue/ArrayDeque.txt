@@ -1,0 +1,79 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+    ** Queue(Interface): Queue is a child interface of collection interface.
+       If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+       the insertion order is not required then we should go for Set.
+            |
+            ├── PriorityQueue (Class)
+            |
+            └── Dequeue (Interface)
+                   |
+                   └── ArrayDeque (Class)
+
+
+ArrayDeque:
+    > The underlying data structure is resizable or growable array.
+    > Duplicates are allowed, but insertion order is preserved.
+    > Heterogeneous objects are allowed.
+    > We can not insert null values.
+    > ArrayDeque is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+    > ArrayDeque is non-synchronized, hence not for Thread safe.
+
+Data Structure:
+    > Initially ArrayDeque create with default size of 16, then it grow the size.
+    > If default size exceeds, it creates double size of current size.
+
+    ┌----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┐
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+    └----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┘
+       0    1   2     3    4    5    6    7    8   9    10   11   12   13   14   15
+
+
+
+    Constructors:
+        1- ArrayDeque al = new ArrayDeque();
+
+            > default size of ArrayDeque is 16, if we insert 17 element, a new size ArrayDeque is going to be created.
+            > so the next size will be double of current size.
+            > when new ArrayDeque is created, the old ArrayDeque values are copied to new ArrayDeque,
+              and old ArrayDeque will allow for Garbage Collector.
+            > by copying old ArrayDeque to new ArrayDeque, it will take time, so it will give less performance compare to Array.
+
+        2- ArrayDeque al = new ArrayDeque(int initial capacity);
+
+            > If you know the approximate size then you can specify the initial size of ArrayDeque.
+            > If the initial size exceeds, then double the new ArrayDeque will create.
+            > by using this we can get some performance improved than first Constructor.
+
+        3- ArrayDeque al = new ArrayDeque(collection c);
+
+            > by using this constructor we can convert any collection method to ArrayDeque method.
+
+
+***************************** Serializable(I) and cloneable(I) ***********************************
+
+(Serializable(I) and cloneable(I)):
+    > By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+    > To store group objects we need data in serialized, but by default every collection object is serialized by serializable(I).
+    > To perform receiver any operation on the transferred data, receiver will created duplicate of data by cloneable(I).
+    > To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+
+*********************************** Advantages & Disadvantages ***************************************************
+
+Advantages:
+    > Fast Access from adding or removing elements from both ends of the deque.
+    > It uses an array for storage, which can be more memory-efficient than a LinkedList.
+
+Disadvantages:
+   > Doesn't allow the null values.
+   > ArrayDeque is non-synchronized, hence not for Thread safe.
+   > Accessing elements by index is not supported.
+   > Random access is slower, due to RandomAccess(I) is not implemented.

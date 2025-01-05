@@ -1,0 +1,49 @@
+Exception?
+
+    > An exception is an event that disrupts the normal flow of the program's execution.
+    > It typically occurs during runtime and can be caused by various factors, such as invalid user input,
+      hardware failures, or network issues.
+    > When an exception occurs, the JVM creates an exception object and hands it off to the runtime system.
+    > The runtime system then searches for a method to handle the exception.
+
+Types of Exceptions in Java:
+
+    Checked Exceptions:
+        > These are exceptions that the compiler forces you to handle.
+        > They are subclasses of Exception but not of RuntimeException.
+        > Examples include IOException and SQLException.
+
+    Unchecked Exceptions:
+        > These are exceptions that the compiler does not force you to handle.
+        > They are subclasses of RuntimeException.
+        > Examples include NullPointerException and ArrayIndexOutOfBoundsException.
+
+
+Exception Hierarchy
+
+The exception hierarchy in Java is structured as follows:
+
+    java.lang.Throwable
+        ├── java.lang.Error
+        └── java.lang.Exception
+            ├── java.lang.RuntimeException
+            └── (other checked exceptions)
+
+Exception Handling Mechanism
+
+    try {
+        // Code that may throw an exception
+    } catch (ExceptionType1 e1) {
+        // Handling code for ExceptionType1
+    } catch (ExceptionType2 e2) {
+        // Handling code for ExceptionType2
+    } finally {
+        // Code that will execute regardless of an exception
+    }
+
+    try block: Contains code that might throw an exception.
+
+    catch block(s): Handles specific exceptions thrown by the try block.
+
+    finally block: Contains code that will execute regardless of whether an exception was thrown or not.
+    It's often used for cleanup operations.

@@ -1,0 +1,64 @@
+** Map(Interface): map is an interface, collection is not a root for map interface, instead collection & Map are same level.
+    If we want to represent a group of individual objects as key value pairs where duplicates keys are not allowed
+    but values can be duplicated then we should go for Map.
+            |
+            ├── HashTable (Class)
+            |
+            ├── HashMap (Class)
+            |     |
+            |     └── LinkedHashMap (Class)
+            |
+            └── SortedMap (Interface)
+                   |
+                   └── TreeMap (Class)
+
+
+LinkedHashMap:
+    > It is the child class of HashMap, it is exactly same as HashMap (methods, Constructors).
+    > The underlying data structure is HashTable + linkedList.
+    > All objects are inserted base on Hashcode, but insertion order is preserved.
+    > The duplicate keys are not allowed, but may insert duplicate values.
+    > Each key-value pair is called entry, hence map is consider as a collection of entry objects.
+    > Heterogeneous objects are allowed for key and values.
+    > LinkedHashMap is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+    > The Search operation give better performance, due to Hashcode.
+    > LinkedHashMap is non-synchronized, hence not for Thread safe.
+
+    NOTE: if you add duplicate key with new value, then old value of that key got updated.
+
+Data Structure:
+    > Initially LinkedHashMap create with default size of 16, then it grow the size.
+    > If default fill ration (Fill ration = 0.75) exceeds, it creates double size of current size.
+
+    ┌----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┐
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+    └----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┘
+       0    1   2     3    4    5    6    7    8   9    10   11   12   13   14   15
+
+
+    Constructors:
+        1- LinkedHashMap lhs = new LinkedHashMap();
+
+            > default size of LinkedHashMap is 16 with (fill ration - 0.75), If default fill ration exceeds,
+               it creates double size of current size.
+            > Fill ration means, 75 % current size object filling means (16 * .75 = 12).
+            > So if the set exceeds 12, then double the current size will create. same process next exceeds also.
+            > when new LinkedHashMap is created, the old LinkedHashMap values are copied to new LinkedHashMap,
+              and old will take care of Garbage Collector.
+            > by copying old LinkedHashMap to new LinkedHashMap, it will take time, so it will give less performance.
+
+        2- LinkedHashMap lhs = new LinkedHashMap(int initial capacity);
+
+            > If you know the approximate size then you can specify the initial size with fill ratio (75%) of LinkedHashMap.
+            > If default fill ration exceeds, it creates double size of current size.
+            > by using this we can get some performance improved than first Constructor.
+
+        3- LinkedHashMap hs = new LinkedHashMap(int initial capacity, float fill ratio);
+
+            > If you know the approximate size then you can specify the initial size with specified fill ratio of LinkedHashMap.
+            > If specified fill ration exceeds, it creates double size of current size.
+            > by using this we can get some performance improved than first Constructor.
+
+        3- LinkedHashMap hs = new LinkedHashMap(Map m);
+
+            > by using this constructor we can convert any Map object to LinkedHashMap method.

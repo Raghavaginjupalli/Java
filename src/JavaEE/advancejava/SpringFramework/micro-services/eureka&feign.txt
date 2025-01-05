@@ -1,0 +1,14 @@
+IN eureka, we have eureka client and server.
+    > by using server, we can register the microservices in place.
+    > by using a client, every microservice can connect to eureka server to registerer
+
+
+After registering the service into eureka server, by using a feign client, to make rest call of another microservice.
+
+NOTE: Both eureka and feign are Netflix community.
+
+
+
+
+Every microservices calling points are Rest full end points.
+to calling those end points are Reast calls using feign client.

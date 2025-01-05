@@ -1,0 +1,143 @@
+Array:
+    > An array is a container object that holds a fixed number of values of a single data type.
+    > The length (size) of the array is fixed once it is created, and it can store both primitive data types and objects.
+    > Array index start from 0 and go up to array.length - 1, and the elements are stored in contiguous memory locations.
+    > Array is mutable, means once create you can update the element (value), but length of array is fixed once declared.
+    > Array is also an object in java, that's why when we create  array we use "new" keyword.
+
+NOTE: When update the array the value location won't change, instead the previous value will update.
+
+Single-dimensional:
+    Method-1:
+        Declaration:
+            To declare an array, you specify the data type followed by square brackets ([]).
+
+            Ex: dataType[] arrayName;   (preferred)
+                dataType []arrayName;
+                dataType arrayName[];
+            NOTE: default value is "Null" now, and at the time of declaration we can't give the size of array.
+
+        Creation:
+            To create an array, use the new keyword and specify its size.
+
+            Ex: arrayName = new dataType[size];
+                arrayName = new dataType[0];  is valid.
+
+            If you create an array the default value are
+                > Numeric primitive datatype - "0"
+                > Floating    - " 0.0 "
+                > Characters  - " \u0000 "
+                > Boolean     - " false "
+                > reference   - " Null "
+            NOTE: > If you just declare the array without Creation, the default value is " Null ".
+                  > In the creation time we must specify the array length, otherwise will get error.
+
+        Initialization:
+            If you are doing like this, in the creation step based on datatype the default values store, and now you're just updating those.
+
+            arrayName[0] = new_value;
+            arrayName[1] = new_value;
+            arrayName[2] = new_value;
+
+    Method-2:
+        Direct initialization:
+            In this method we directly Declaration, Creation, Initialization in single line.
+            Ex: dataType[] arrayName = {value, value, value,.....};
+
+
+Two-dimensional:
+    > A two-dimensional array in Java is essentially an array of arrays.
+    > It allows you to organize data in a table-like structure (rows and columns).
+
+    Method-1:
+        Ex: dataType[][] arrayName = new dataType[rows][columns];
+
+        Declaration:
+            dataType[][] arrayName; (preferred)
+            dataType [][]arrayName;
+            dataType arrayName[][];
+            dataType[] []arrayName;
+            dataType []arrayName[];
+            dataType[] arrayName[];
+
+            NOTE: > All are valid but not preferable, use only this " dataType[][] arrayName".
+                  > Default value is "Null" now, and at the time of declaration we can't give the size of array.
+
+        Creation:
+            arrayName = new dataType[rows][columns];
+
+        Initialization:
+            arrayName[0][0] = 1;  // Row 0, Column 0
+            arrayName[0][1] = 2;  // Row 0, Column 1
+            arrayName[0][2] = 3;  // Row 0, Column 2
+            arrayName[1][0] = 4;  // Row 1, Column 0
+            arrayName[1][1] = 5;  // Row 1, Column 1
+
+    Method-2:
+        Direct initialization:
+            In this method we directly Declaration, Creation, Initialization in single line.
+
+            int[][] arrayName = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            };
+
+    Accessing elements using two index:
+        Ex: arrayName[row][column];
+
+
+
+Two-dimensional array:
+    Declaration:
+        dataType[][] a,b;               // Both are two-dimensional arrays
+        dataType [][]a,b;               // Both are two-dimensional arrays
+        dataType[] []a,b;               // Both are two-dimensional arrays
+        dataType []a[],b;               // a -> 2, and b is -> 1 array.
+        dataType []a,b[];               // a -> 1, and b -> 2 array.
+        dataType a[][],b;               // a -> 2 array, and b is variable.
+
+        Errors:
+    dataType a[],[]b;                   // we can do like this dataType a[],b[];
+              Ok  X
+
+    dataType a[],[]b, []c;              // we can do like this dataType a[],b[], c[];
+              Ok  X    X
+
+    NOTE: In java, the array dimension before name we can specify for only first variable.
+
+
+    Creation:
+        int[][] num = new int[4][];         // 4 rows with uneven  columns
+        num[0] = new int[3];
+        num[1] = new int[2];
+        num[2] = new int[4];
+        num[3] = new int[1];
+
+        NOTE: If nested arrays have uneven size you need create a memory like this.
+
+
+
+Accessing array without giving actual values:
+
+Single-dimensional:
+    Ex: datatype[] arrayName = new dataType[4];
+
+    NOTE: after creating the array without values, if we want to access the array
+    > System.out.println(arrayName);            // Display the class name @ and memory location
+    > System.out.println(arrayName[i]);         // Display the default value of type of array.(like 0, 0.0, \u0000, false..)
+
+Two-dimensional:
+    Ex: datatype[][] arrayName = new dataType[4][2];
+
+    NOTE: after fully creating the array without values, if we want to access the array
+    > System.out.println(arrayName);               // Display the class name @ and memory location
+    > System.out.println(arrayName[i]);            // Display the class name @ and memory location
+    > System.out.println(arrayName[i][j]);         // Display the default value of type of array.(like 0, 0.0, \u0000, false..)
+
+    Ex: datatype[][] arrayName = new dataType[4][];
+
+        NOTE: after partially creating the array without values, if we want to access the array
+        > System.out.println(arrayName);               // Display the class name @ and memory location
+        > System.out.println(arrayName[i]);            // Display the "null", because nested array we are not specified.
+        > System.out.println(arrayName[i][j]);         // null pointer exception, because accessing null value.

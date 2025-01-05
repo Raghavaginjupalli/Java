@@ -1,0 +1,91 @@
+Spring JDBC (Java Database Connectivity) Template:
+	> It provides a API that improves code simplicity and readability and it is used to connect to 
+	  the database and execute SQL Queries.
+
+Data Access using Spring JDBC Template:
+	There are a number of options for selecting an approach to form the basis for your JDBC database access. 
+	Spring framework provides the following approaches for JDBC database access:
+		> JdbcTemplate
+		
+		> NamedParameterJdbcTemplate
+		
+		> SimpleJdbcTemplate
+		
+		> SimpleJdbcInsert and SimpleJdbcCall
+		
+	1- JDBC Template
+		> Jdbc Template is the JDBC core package that simplifies the use of JDBC and helps to avoid common errors. 
+		> It internally uses JDBC API and eliminates a lot of problems with JDBC API. 
+		> It executes SQL queries or updates, initiating iteration over ResultSets.
+		
+		To configure the Data Source:
+		
+		
+		// BasicDataSource (Recommended for Development)  
+		
+			public DataSource dataSource() {
+				BasicDataSource dataSource = new BasicDataSource();
+				dataSource.setUrl("jdbc:mysql://localhost:3306/yourdatabase");
+				dataSource.setUsername("yourusername");
+				dataSource.setPassword("yourpassword");
+				dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+				dataSource.setMaxTotal(10); // Max connections
+				dataSource.setMaxIdle(5); // Max idle connections
+				return dataSource;
+			}
+
+			public JdbcTemplate jdbcTemplate() {
+				return new JdbcTemplate(dataSource());
+			}
+			
+		// DriverManagerDataSource  (Recommended for Development)  
+	
+			public DataSource dataSource() {
+				
+				DriverManagerDataSource dataSource = new DriverManagerDataSource();
+				dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+				dataSource.setUrl("jdbc:mysql://localhost:3306/yourdatabase");
+				dataSource.setUsername("yourusername");
+				dataSource.setPassword("yourpassword");
+				return dataSource;
+			}
+			public JdbcTemplate jdbcTemplate() {
+				return new JdbcTemplate(dataSource());
+			}
+			
+		// HikariConfig (Recommended for Production)
+		
+			public DataSource dataSource() {
+				HikariConfig config = new HikariConfig();
+				config.setJdbcUrl("jdbc:mysql://localhost:3306/yourdatabase");
+				config.setUsername("yourusername");
+				config.setPassword("yourpassword");
+				config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+				config.setMaximumPoolSize(10); // Max connections
+				return new HikariDataSource(config);
+			}
+			
+			public JdbcTemplate jdbcTemplate() {
+				return new JdbcTemplate(dataSource());
+			}
+			
+			
+		// DataSourceBuilder (Spring Boot and Enterprise Environments)
+		
+			public DataSource dataSource() {
+				return DataSourceBuilder.create()
+                .url("jdbc:mysql://localhost:3306/yourdatabase")
+                .username("yourusername")
+                .password("yourpassword")
+                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .build();
+			}
+
+			public JdbcTemplate jdbcTemplate() {
+				return new JdbcTemplate(dataSource());
+			}
+			
+	Summary:
+		> BasicDataSource and DriverManagerDataSource are simple solutions, best suited for development and testing.
+		> HikariCP is the most recommended connection pool for production due to its performance and efficiency.
+		> Spring Boot's DataSourceBuilder is when leveraging Spring Boot or enterprise environments with a servlet container.

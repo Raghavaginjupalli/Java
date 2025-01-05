@@ -1,0 +1,114 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+** Set(Interface): set is a child interface of collection interface.
+   If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+   the insertion order is not required then we should go for Set.
+        |
+        ├── HashSet (Class)
+        |    |
+        |    └── LinkedHashMap (Class)
+        |
+        └── SortedSet (Interface)
+               |
+               └── TreeSet (Class)
+
+
+TreeSet:
+    > The underlying data structure is Balanced Tree.
+    > Duplicates are not allowed, but inserting order is not applicable.
+    > All objects are inserted some sorting order.
+    > We can insert null values only once.
+    > Heterogeneous objects are not allowed, because of sorting order.
+    > TreeSet is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+    > The Search operation give better performance, due to Hashcode.
+    > HashSet is non-synchronized, hence not for Thread safe.
+
+
+
+Data Structure:
+    > Let’s assume you insert the following elements into a TreeSet: 50, 30, 70, 20, 40, 60, 80.
+
+                 50
+               /    \
+             30      70
+            /  \    /  \
+           20  40  60  80
+
+    NOTE: When you iterate over the TreeSet, the elements will be retrieved in ascending order: 20, 30, 40, 50, 60, 70, 80.
+
+TreeSet specific methods:
+    Ex:{100, 101, 103, 104, 107, 110, 115}
+
+    > first()               -> 100
+    > last()                -> 115
+    > headSet(104)          -> [100, 101, 103]
+    > tailSet(104)          -> [104, 107, 110, 115]
+    > subSet(103, 110)      -> [103, 104, 107]
+    > comparator()          -> null because we are using default one.
+
+    NOTE: Default numbers sorting order is an ascending order and for String alphabetical order.
+
+
+    Constructors:
+        1- TreeSet hs = new TreeSet();  // Default sorting order
+
+            > TreeSet creates empty, so there no initial size.
+            > It automatically create new to its parent nodes when objects are added.
+            > Default numbers sorting order is an ascending order and for String alphabetical order.
+
+        2- TreeSet hs = new TreeSet(Comparator c);   // Comparator means - specific sorting order
+
+            > TreeSet creates empty, so there no initial size.
+            > It automatically create new nodes to its parent node when objects are added.
+            > Based on specific sorting order it sort the given objects.
+
+        3- TreeSet hs = new TreeSet(sorting s);
+
+            > by using this constructor we can convert any sorting method to TreeSet method.
+
+        4- TreeSet hs = new TreeSet(collection c);
+
+            > by using this constructor we can convert any collection method to TreeSet method.
+
+***************************** Serializable(I), cloneable(I) ***********************************
+
+(Serializable(I) and cloneable(I)):
+    > By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+    > To store group objects we need data in serialized, but by default every collection object is serialized by serializable(I).
+    > To perform receiver any operation on the transferred data, receiver will created duplicate of data by cloneable(I).
+    > To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+
+
+Difference between HashSet, LinkedHashSet and TreeSet:
+
+┌--------------------------------------┬---------------------------------------┬---------------------------------------┐
+|              HashSet                 |             LinkedHashSet             |               TreeSet                 |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The underlying data Structure is     | The underlying data Structure is      | The underlying data Structure is      |
+| Hash table.                          | Hash table + LinkedList.              | Balanced Tree.                        |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The insertion order is not preserved.| The insertion order is  preserved.    | N/A, but insert some sorting order.   |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| It does not allow duplicates.        | It also does not allow duplicates.    | It also does not allow duplicates.    |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| Performance is faster for adding,    | Performance is slower than `HashSet`  |Performance is slower than `HashSet`   |
+| removing, and checking existence of  | due to the overhead of maintaining    |or `LinkedHashSet` because of sorting  |
+| objects, because of not maintaining  | insertion order.                      |overhead.                              |
+| insertion order.                     |                                       |                                       |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| It allows one null element.          | It also allows one null element.      | For empty allows null, then not allow.|
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The Iteration Order no predictable.  | The insertion as same Iteration Order.| The Iteration as same sorting Order.  |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| Use when you only care the uniqueness| Use when you need to maintain the     | Use when you need sorted elements and |
+| of elements without any specific     | insertion order of elements in the    | require operations like range queries |
+| order.                               | Set.                                  | or navigable views.                   |
+└--------------------------------------┴---------------------------------------┴---------------------------------------┘

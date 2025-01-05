@@ -1,0 +1,89 @@
+Methods in Map Interface
+
+    > put(K key, V value):
+
+        Inserts the specified key-value pair into the map.
+        If the map already contains the key, the previous value is replaced with the new value.
+        Returns the previous value associated with the key, or null if there was no mapping for the key.
+
+    > putAll(Map<? extends K, ? extends V> m):
+
+        Copies all the mappings from the specified map to the current map.
+        If a key already exists in the map, its value will be replaced.
+
+    > get(Object key):
+
+        Returns the value associated with the specified key, or null if no mapping exists for the key.
+
+    > remove(Object key):
+
+        Removes the mapping for the specified key from the map, if present.
+        Returns the value associated with the removed key, or null if the key was not found.
+
+    > containsKey(Object key):
+
+        Returns true if the map contains a mapping for the specified key.
+
+    > containsValue(Object value):
+
+        Returns true if the map maps one or more keys to the specified value.
+
+    > keySet():
+
+        Returns a Set view of the keys contained in the map.
+
+    > values():
+
+        Returns a Collection view of the values contained in the map.
+
+    > entrySet():
+
+        Returns a Set view of the mappings (key-value pairs) contained in the map. Each element in this set is a Map.Entry.
+
+    > isEmpty():
+
+        Returns true if the map contains no key-value mappings.
+
+    > size():
+
+        Returns the number of key-value mappings in the map.
+
+    > clear():
+
+        Removes all mappings from the map, making it empty.
+
+    > equals(Object o):
+
+        Compares the specified object with the map for equality. Two maps are considered equal if they have the same size and mappings.
+
+    > hashCode():
+
+        Returns the hash code for the map, which is based on its mappings.
+
+    > forEach(BiConsumer<? super K, ? super V> action):
+
+        Performs the given action for each entry in the map until all entries have been processed or the action throws an exception.
+
+    > getOrDefault(Object key, V defaultValue):
+
+        Returns the value associated with the key, or defaultValue if no mapping exists for the key.
+
+    > replace(K key, V oldValue, V newValue):
+
+        Replaces the entry for the specified key only if it is currently mapped to the specified value.
+        Returns true if the value was replaced, false otherwise.
+
+    > replace(K key, V value):
+
+        Replaces the value for the specified key if it is present.
+        Returns the previous value associated with the key, or null if no value was associated.
+
+    > putIfAbsent(K key, V value):
+
+        If the specified key is not already mapped to a value, associates it with the specified value.
+        Returns the existing value associated with the key, or null if no mapping was found.
+
+    > remove(Object key, Object value):
+
+        Removes the entry for the specified key only if it is currently mapped to the specified value.
+        Returns true if the entry was removed, false otherwise.

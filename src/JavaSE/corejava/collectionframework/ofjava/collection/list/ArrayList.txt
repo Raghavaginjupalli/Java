@@ -1,0 +1,128 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+List(Interface): list is a child interface of collection interface.
+
+    If we want to represent a group of individual objects as single entity where duplicates are allowed and storing the
+    elements as per the insertion order then we should go for List.
+        |
+        ├── ArrayList (Class)
+        |
+        ├── LinkedHashSet (Class)
+        |
+        └── Vector (Class)
+               |
+               └── Stack (Class)
+
+
+ArrayList:
+    > The underlying data structure is resizable or growable array.
+    > Duplicates are allowed, but insertion order is preserved.
+    > Heterogeneous objects are allowed.
+    > We can insert null values.
+    > ArrayList is implemented by Serializable(I), cloneable(I) and RandomAccess(I).
+    > ArrayList is non-synchronized, hence not for Thread safe.
+
+Data Structure:
+    > Initially ArrayList create with default size of 10, then it grow the size.
+    > If default size exceeds, based on the formula new ArrayList will create.
+
+    ┌----┬----┬----┬----┬----┬----┬----┬----┬----┬----┐
+    |    |    |    |    |    |    |    |    |    |    |  + [ new size = (current size * 3/2) + 1 ]
+    └----┴----┴----┴----┴----┴----┴----┴----┴----┴----┘
+       0    1   2     3    4    5    6    7    8   9
+
+
+
+    Constructors:
+        1- ArrayList al = new ArrayList();
+
+            > default size of ArrayList is 10, if we insert 11 element, a new size ArrayList is going to be created.
+            > by using this formula we can calculate the size of new ArrayList. [new size = (current size * 3/2) + 1]
+            > so the next size will be (new size = (10 * 1.5) + 1 ===> 16 is the new size).
+            > if we insert 17 element also same process, the new ArrayList will go to create.
+            > when new ArrayList is created, the old ArrayList values are copied to new ArrayList,
+              and old ArrayList allows the Garbage Collection.
+            > by copying old ArrayList to new ArrayList, it will take time, so it will give less performance compare to Array.
+
+        2- ArrayList al = new ArrayList(int initial capacity);
+
+            > If you know the approximate size then you can specify the initial size of ArrayList.
+            > If the initial size will then be based on this formula new ArrayList will create.
+            > This is the formula for new size [new size = (current size * 3/2) + 1]
+            > by using this we can get some performance improved than first Constructor.
+
+        3- ArrayList al = new ArrayList(collection c);
+
+            > by using this constructor we can convert any collection method to ArrayList method.
+
+
+***************************** Serializable(I), cloneable(I) and RandomAccess(I) ***********************************
+
+(Serializable(I) and cloneable(I)):
+    > By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+    > To store group objects we need data in serialized, but by default every collection object is serialized by serializable(I).
+    > To perform receiver any operation on the transferred data, receiver will created duplicate of data by cloneable(I).
+    > To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+(RandomAccess(I)):
+> ArrayList and Vector classes implements RandomAccess interface, so that we can access any Random element
+  with same speed, there is no performance difference between 1st and last element.
+
+
+*********************************** Advantages & Disadvantages ***************************************************
+
+Advantages:
+    > If your data contains duplicates and insertion order is preserved then best to go ArrayList.
+    > If your frequent operation is retrieval then best to go ArrayList.
+    > If your data contain null values then best to go ArrayList.
+
+Disadvantages:
+    > If you add or remove any object in middle of the ArrayList, it will shuffle the all effected positions.
+    > So your requirement is frequent adding and removing middle of the ArrayList, don't go for ArrayList.
+
+
+
+
+Difference between ArrayList and Vector:
+
+    ┌---------------------------------------------┬------------------------------------┐
+    |             ArrayList                       |           Vector                   |
+    ├──-------------------------------------------+------------------------------------┤
+    | ArrayList is not synchronized.              | Vector is synchronized.            |
+    ├──-------------------------------------------+------------------------------------┤
+    | Increments 50% of the current array size    | Increments 100% of current array   |
+    | when capacity is exceeded.                  | size when capacity is exceeded.    |
+    ├──-------------------------------------------+------------------------------------┤
+    | ArrayList is not a thread safe.             | Vector is a thread safe.           |
+    ├──-------------------------------------------+------------------------------------┤
+    | Faster because it is non-synchronized.      | Slower because it is synchronized. |
+    ├──-------------------------------------------+------------------------------------┤
+    | Uses Iterator to traverse elements.         | Uses Iterator and Enumeration      |
+    |                                             | to traverse elements.              |
+    ├──-------------------------------------------+------------------------------------┤
+    | Threads are not required to wait to operate | Threads are required to wait on    |
+    | on ArrayList, hence performance will high.  | Vector, hence performance is high. |
+    ├──-------------------------------------------+------------------------------------┤
+    | Suitable for multiple threads but requires  | Allows only one thread at a time   |
+    | external synchronization for thread safety. | due to built-in synchronization.   |
+    └──-------------------------------------------┴------------------------------------┘
+
+
+
+How to get Synchronized version of ArrayList Object:
+
+    By default, ArrayList is non-Synchronized, but we can get Synchronized version of ArrayList by using
+    Collection class synchronizedList() method.
+
+    ArrayList l1 = new ArrayList();
+    List l = Collections.synchronizedList(l1);
+
+    l1 is non-synchronized.
+    l is synchronized.

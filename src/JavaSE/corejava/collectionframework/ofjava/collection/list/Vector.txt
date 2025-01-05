@@ -1,0 +1,71 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+List(Interface): list is a child interface of collection interface.
+
+    If we want to represent a group of individual objects as single entity where duplicates are allowed and storing the
+    elements as per the insertion order then we should go for List.
+        |
+        ├── ArrayList (Class)
+        |
+        ├── LinkedHashSet (Class)
+        |
+        └── Vector (Class)
+               |
+               └── Stack (Class)
+
+
+
+Vector:
+    > The underlying data structure is resizable or growable array.
+    > Duplicates are allowed, but insertion order is preserved.
+    > Heterogeneous objects are allowed.
+    > We can insert null values.
+    > Vector is implemented by Serializable(I), cloneable(I) and RandomAccess(I).
+    > Vector is synchronized, hence it is Thread safe.
+
+Data Structure:
+    > Initially Vector create with default size of 10, then it grow the size.
+    > If default size exceeds, it creates double size of current size.
+
+    ┌----┬----┬----┬----┬----┬----┬----┬----┬----┬----┐
+    |    |    |    |    |    |    |    |    |    |    |  + [ new size = current size * 2]
+    └----┴----┴----┴----┴----┴----┴----┴----┴----┴----┘
+       0    1   2     3    4    5    6    7    8   9
+
+
+
+    Constructors:
+        1- Vector v = new Vector();
+
+            > default size of Vector is 10, if we insert 11 element, a new size Vector is going to be created.
+            > by using this formula we can calculate the size of new Vector. [new size = current size * 2]
+            > so the next size will be (new size = (10 * 2) ===> 20 is the new size).
+            > if we insert 21 object also same process, the new Vector will go to create.
+            > when new Vector is created, the old Vector values are copied to new Vector,
+              and old Vector allows the Garbage Collection.
+            > by copying old Vector to new Vector, it will take time, so it will give less performance compare to Array.
+
+        2- Vector v = new Vector(int initial capacity);
+
+            > If you know the approximate size then you can specify the initial size of Vector.
+            > If the initial size exceeds, then new size will create based on formula new Vector will create.
+            > This is the formula for new size [new size = (current size * 3/2) + 1]
+            > by using this we can get some performance improved than first Constructor.
+
+        3- Vector v = new Vector(int initial capacity, int incremental capacity);
+
+            > If you know the approximate size then you can specify the initial size of Vector.
+            > If the initial size exceeds, then new size will create on incremental capacity that you provided.
+            > This is the formula for new size [new size = (current size * 3/2) + 1]
+            > by using this we can get some performance improved than first Constructor.
+
+        4- Vector v = new Vector(collection c);
+
+            > by using this constructor we can convert any collection method to Vector method.

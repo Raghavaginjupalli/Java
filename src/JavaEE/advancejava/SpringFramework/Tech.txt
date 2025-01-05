@@ -1,0 +1,13 @@
+1- Spring Core module
+2- Spring JDBC
+3- Spring AOP
+4- Spring ORM
+5- Spring Web MVC
+	image handling from client
+	search request from client
+
+**************************
+6- Spring Security
+	CSRF Tokkens,
+	Seesion id
+

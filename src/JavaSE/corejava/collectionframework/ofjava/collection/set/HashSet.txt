@@ -1,0 +1,122 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+** Set(Interface): set is a child interface of collection interface.
+   If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+   the insertion order is not required then we should go for Set.
+        |
+        ├── HashSet (Class)
+        |    |
+        |    └── LinkedHashMap (Class)
+        |
+        └── SortedSet (Interface)
+               |
+                   └── TreeSet (Class)
+
+
+HashSet:
+    > The underlying data structure is HashTable.
+    > Duplicates are not allowed, and we can insert at-most one null value.
+    > All objects are inserted base on Hashcode, but insertion order also not preserved.
+    > Heterogeneous objects are allowed.
+    > HashSet is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+    > The Search operation give better performance, due to Hashcode.
+    > HashSet is non-synchronized, hence not for Thread safe.
+
+Data Structure:
+    > Initially ArrayList create with default size of 16, then it grow the size.
+    > If default fill ration (Fill ration = 0.75) exceeds, it creates double size of current size.
+
+    ┌----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┬----┐
+    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+    └----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┴----┘
+       0    1   2     3    4    5    6    7    8   9    10   11   12   13   14   15
+
+
+
+    Constructors:
+        1- HashSet hs = new HashSet();
+
+            > default size of HashSet is 16 with (fill ration - 0.75), If default fill ration exceeds,
+              it creates double size of current size.
+            > Fill ration means, 75 % current size object filling means (16 * .75 = 12).
+            > So if the set exceeds 12, then double the current size will create. same process will next exceed also.
+            > when new HashSet is created, the old HashSet values are copied to new HashSet,
+              and old HashSet allows the Garbage Collection.
+            > by copying old HashSet to new HashSet, it will take time, so it will give less performance.
+
+        2- HashSet hs = new HashSet(int initial capacity);
+
+            > If you know the approximate size then you can specify the initial size with fill ratio (75%) of HashSet.
+            > If default fill ration exceeds, it creates double size of current size.
+            > by using this we can get some performance improved than first Constructor.
+
+        3- HashSet hs = new HashSet(int initial capacity, float fill ratio);
+
+            > If you know the approximate size then you can specify the initial size with specified fill ratio of HashSet.
+            > If specified fill ration exceeds, it creates double size of current size.
+            > by using this we can get some performance improved than first Constructor.
+
+        3- HashSet hs = new HashSet(collection c);
+
+            > by using this constructor we can convert any collection method to ArrayList method.
+
+
+
+***************************** Serializable(I), cloneable(I) ***********************************
+
+(Serializable(I) and cloneable(I)):
+    > By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+    > To store group objects we need data in serialized, but by default every collection object is serialized by serializable(I).
+    > To perform receiver any operation on the transferred data, receiver will created duplicate of data by cloneable(I).
+    > To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+
+*********************************** Advantages & Disadvantages ***************************************************
+
+Advantages:
+    > If you don't want duplicates and insertion order not required then best to go HashSet.
+    > If your frequent operation is searching, then best to go HashSet.
+    > If you have large data HashSet will give high performance.
+
+Disadvantages:
+    > In HashSet doesn't provide indexing to access to the inside objects.
+    > Because of HashTable, it is not memory efficient.
+    > HashSet is non-synchronized, hence not for Thread safe.
+
+
+
+Difference between HashSet, LinkedHashSet and TreeSet:
+
+┌--------------------------------------┬---------------------------------------┬---------------------------------------┐
+|              HashSet                 |             LinkedHashSet             |               TreeSet                 |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The underlying data Structure is     | The underlying data Structure is      | The underlying data Structure is      |
+| Hash table.                          | Hash table + LinkedList.              | Balanced Tree.                        |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The insertion order is not preserved.| The insertion order is  preserved.    | N/A, but insert some sorting order.   |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| It does not allow duplicates.        | It also does not allow duplicates.    | It also does not allow duplicates.    |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| Performance is faster for adding,    | Performance is slower than `HashSet`  |Performance is slower than `HashSet`   |
+| removing, and checking existence of  | due to the overhead of maintaining    |or `LinkedHashSet` because of sorting  |
+| objects, because of not maintaining  | insertion order.                      |overhead.                              |
+| insertion order.                     |                                       |                                       |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| It allows one null element.          | It also allows one null element.      | For empty allows null, then not allow.|
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| The Iteration Order no predictable.  | The insertion as same Iteration Order.| The Iteration as same sorting Order.  |
+├─-------------------------------------+---------------------------------------+---------------------------------------┤
+| Use when you only care the uniqueness| Use when you need to maintain the     | Use when you need sorted elements and |
+| of elements without any specific     | insertion order of elements in the    | require operations like range queries |
+| order.                               | Set.                                  | or navigable views.                   |
+└--------------------------------------┴---------------------------------------┴---------------------------------------┘
+
+
+

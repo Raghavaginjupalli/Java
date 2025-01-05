@@ -1,0 +1,72 @@
+Variables:
+    To store the value while the program is running, and we can reassign the value to variable.
+
+    Cons:
+        > By using this we can store at a time only one value.
+        > if we want to store multiple values needs to create the multiple variables.
+
+Arrays:
+    To store same data type of multiple values in single reference object is called array.
+
+    Cons:
+        > we must specify the length of array when we are creating.
+        > we can store multiple values, but only single data type.
+        > after creating the array the size of array is fixed.
+        > there is no underlying standard structure and no ready mate methods for arrays.
+
+
+Collections:
+    It solves all cons of arrays. by growing length, storing different values, with standard methods.
+
+    > Collections are growable in nature, based on our requirement we can increase or decrease the size.
+    > Collections can hold both homogeneous and heterogeneous elements.
+    > Every collection class is implemented based on some standard data structure.
+    > So, ready-made methods are available to work on elements.
+
+*****************NOTE:
+> By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+> To store group objects we need data in serialized that data, but by default every collection object is serialized by serializable(I).
+> To perform receiver any operation on the transferred data, receiver is created duplicate data by cloneable(I).
+    *******************NOTE
+> To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+
+
+
+
+
+Difference between Arrays & Collections:
+
+            +------------------------------+-------------------------------------------------+
+            |          Arrays              |                   Collections                   |
+            +------------------------------+-------------------------------------------------+
+            | Arrays are fixed in size.    | Based on our requirement, we can increase or    |
+            |                              | decrease the size.                              |
+            +------------------------------+-------------------------------------------------+
+            | With respect to memory,      | With respect to memory, collections are highly  |
+            | arrays are not               | recommended to use.                             |
+            | recommended to use.          |                                                 |
+            +------------------------------+-------------------------------------------------+
+            | With respect to              | With respect to performance, collections are    |
+            | performance, arrays are      | not recommended to use.                         |
+            | recommended to use.          |                                                 |
+            +------------------------------+-------------------------------------------------+
+            | Arrays can hold only         | Collections can hold both homogeneous and       |
+            | homogeneous data type        | heterogeneous elements.                         |
+            | elements.                    |                                                 |
+            +------------------------------+-------------------------------------------------+
+            | There is no underlying       | Every collection class is implemented based on  |
+            | data structure for arrays.   | some data structure.                            |
+            +------------------------------+-------------------------------------------------+
+            | Ready-made methods are       | Ready-made methods support is available for     |
+            | not available.               | every requirement.                              |
+            +------------------------------+-------------------------------------------------+
+            | Arrays can hold both         | Collections can hold only object types but      |
+            | primitive and object         | not primitives.                                 |
+            | types.                       |                                                 |
+            +------------------------------+-------------------------------------------------+
+
+
+
+
+

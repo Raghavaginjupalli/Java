@@ -1,0 +1,104 @@
+Methods in Collection Interface:
+
+    > add(E e):
+
+        Adds the specified element to the collection.
+        Returns true if the collection changed as a result of the operation (i.e., the element was added).
+
+    > addAll(Collection c):
+
+        Adds all the elements in the specified collection to the current collection.
+        Returns true if the collection changed as a result.
+
+    > clear():
+
+        Removes all elements from the collection.
+        The collection becomes empty after this operation.
+
+    > contains(Object o):
+
+        Returns true if the collection contains the specified element.
+
+    > containsAll(Collection c):
+
+        Returns true if the collection contains all the elements in the specified collection.
+
+    > isEmpty():
+
+        Returns true if the collection is empty (i.e., contains no elements).
+
+    > iterator():
+
+        Returns an Iterator over the elements in the collection.
+        Allows traversing the collection sequentially.
+
+    > remove(Object o):
+
+        Removes a single instance of the specified element from the collection, if it exists.
+        Returns true if the collection changed as a result.
+
+    > removeAll(Collection c):
+
+        Removes from the collection all of its elements that are contained in the specified collection.
+
+    > retainAll(Collection c):
+
+        Retains only the elements in the collection that are contained in the specified collection.
+        Removes all other elements.
+
+    > size():
+
+        Returns the number of elements in the collection.
+
+    > toArray():
+
+        Returns an array containing all the elements in the collection.
+
+    > toArray(T[] a):
+
+        Returns an array containing all the elements in the collection. The runtime type of the returned array is that of the specified array.
+
+    > equals(Object o):
+
+        Compares the specified object with the collection for equality.
+        Returns true if the collections are equal.
+
+    > hashCode():
+
+        Returns the hash code value for the collection. This is used for hashing-based collections like HashSet or HashMap.
+
+
+Additional Methods:
+
+    List Interface (inherits from Collection):
+
+        > get(int index):
+
+            Retrieves the element at the specified index in the list.
+
+        > add(int index, E element):
+
+            Adds the element at the specified index in the list.
+
+        > remove(int index):
+
+            Removes the element at the specified index.
+
+    Set Interface (inherits from Collection):
+
+        > No specific additional methods beyond the ones inherited from Collection,
+          but Set ensures that duplicate elements are not allowed.
+
+    Queue Interface (inherits from Collection):
+
+        > offer(E e):
+
+            Inserts the specified element into the queue, returning true if it was successful.
+
+        > poll():
+
+            Retrieves and removes the head of the queue, or returns null if the queue is empty.
+
+        > peek():
+
+            Retrieves, but does not remove, the head of the queue, or returns null if the queue is empty.

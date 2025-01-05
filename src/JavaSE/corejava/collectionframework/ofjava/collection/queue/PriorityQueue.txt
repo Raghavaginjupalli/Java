@@ -1,0 +1,69 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+    ** Queue(Interface): Queue is a child interface of collection interface.
+       If we want to represent a group of individual objects as single entity where duplicates are not allowed and
+       the insertion order is not required then we should go for Set.
+            |
+            ├── PriorityQueue (Class)
+            |
+            └── Dequeue (Interface)
+                   |
+                   └── ArrayDequeue (Class)
+
+PriorityQueue:
+    > The underlying data structure of the PriorityQueue is a min-heap (by default).
+    > A min-heap is a binary tree where each parent node is less than or equal to its child nodes.
+    > In a PriorityQueue, the element with the highest priority is served first.
+    > PriorityQueue allows duplicates. Unlike a Set, it does not enforce uniqueness.
+    > The insertion order is not guaranteed in a PriorityQueue because the queue is ordered based on priority,
+      not the order in which elements were added.
+    > PriorityQueue does not allow null elements. If you try to add a null element, it will throw a NullPointerException.
+    > It can store any objects that are comparable (implements Comparable) or can be compared via a provided comparator.
+
+Data Structure:
+    The PriorityQueue in Java uses a heap internally (a priority queue implemented as a binary heap).
+
+    Heap: A binary heap is a complete binary tree where the value of each node is greater than or
+          equal to its children (max-heap) or smaller than or equal to its children (min-heap).
+
+    In Java, by default, the PriorityQueue is a min-heap, meaning the smallest element has the highest priority.
+
+    Constructor:
+        > PriorityQueue pq = new PriorityQueue();
+
+            Creates a PriorityQueue with the default initial capacity (11) and natural ordering of elements.
+
+        > PriorityQueue pq = new PriorityQueue(int initialCapacity);
+            Creates a PriorityQueue with the specified initial capacity. If the number of elements exceeds the capacity, the size will be dynamically increased.
+
+        > PriorityQueue pq = new PriorityQueue(Comparator.reverseOrder());
+            Creates a PriorityQueue using the specified comparator to order the elements.
+
+        > PriorityQueue pq = new PriorityQueue(Collection C);
+            Creates a PriorityQueue containing the elements of the specified collection.
+
+
+
+******************************************* Advantages and Disadvantages ***********************************************
+
+Advantages:
+
+    > The peek() operation (to get the element with the highest priority).
+    > Insertion and deletion operations are efficient, because of the heap structure.
+    > Allows you to specify a custom comparator for ordering elements.
+    > Best for priority scheduling algorithms where you need to process elements with higher priority first.
+
+
+Disadvantages:
+
+    > PriorityQueue does not guarantee the order of elements as they were inserted unless explicitly defined by a comparator.
+    > Null elements are not allowed in a PriorityQueue, so it’s not suitable for situations where null values need to be handled.
+    > PriorityQueue is not synchronized. If multiple threads access the queue concurrently, it must be externally synchronized.
+    > If you use a custom comparator, the performance of the queue operations could be affected compared to using the natural ordering of the elements.

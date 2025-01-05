@@ -1,0 +1,102 @@
+Cursor:
+    If we want to retrieve objets one by one form the collections, then we should go for Cursors.
+        > Enumeration
+        > Iterator
+        > ListIterator
+
+Enumeration:
+    The Enumeration interface allows you to sequentially access elements of a collections (Vector and HashTable).
+
+    Key Methods:
+        boolean hasMoreElements():  Checks if there are more elements to iterate over.
+        E nextElement():            Retrieves the next element in the collection.
+
+    NOTE: It is not supported for removal of object, only support for Vector(v) and HashTable(h).
+
+    Enumeration e = v.elements();
+    Enumeration e = h.elements();
+
+    Limitation:
+        > It is only forward direction cursor, it won't support by direction.
+        > It is only support for legacy methods (Vector and HashTable)
+        > It won't support adding or removing objects.
+
+Iterator:
+    The Iterator interface allows you to sequentially access elements of all the collections.
+
+    Key Methods:
+        boolean hasNext():     Checks if there are more elements to iterate over.
+        object next():         Retrieves the next element in the collection.
+        void remove():         Remove the next element in the collection.
+
+        Iterator it = c.iterator();
+
+        NOTE: It will support all methods in collection(c).
+
+    Limitation:
+        > It is only forward direction cursor, it won't support by direction.
+        > It won't support for adding or replacement objects.
+
+
+********************************************The most powerful cursor****************************************************
+
+
+ListIterator:
+    ListIterator is a child interface of iterator and hence all methods of iterator by default available in ListInterface.
+    The ListIterator interface allows you to sequentially access elements of all the collections.
+
+    Key Methods:
+    Forward methods:
+        boolean hasNext():          Checks if there are more elements to iterate over.
+        object next():              Retrieves the next element in the collection.
+        int nextIndex():            Retrieves the next element in the collection.
+
+    Backward methods:
+        boolean hasPrevious():      Checks if there are more elements to iterate over.
+        object previous():          Retrieves the next element in the collection.
+        int previousIndex():        Retrieves the next element in the collection.
+
+        void remove():              Remove the next element in the collection.
+        void set(object new)
+        void add(object new)
+
+        ListIterator ltr = l.listIterator();
+
+        NOTE: It will support only List(l) methods in collection.
+
+    Advantages:
+        > It will support by direction cursor.
+        > It will support for adding, replacement and remove objects operations.
+
+
+
+Difference between all Cursors:
+
+    ┌------------------------+----------------------+----------------------+-------------------------┐
+    |       Feature          |     Enumeration      |       Iterator       |       ListIterator      |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Applicable Collections | Legacy classes       | All collections      | Only for List           |
+    |                        | (Vector, Hashtable)  | (List, Set, Queue)   | (ArrayList, LinkedList) |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Traversal Direction    | Forward only         | Forward only         | Forward and backward    |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Element Removal        | Not supported        | Supported via        | Supported via           |
+    |                        |                      | remove()             | remove()                |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Element Addition       | Not supported        | Not supported        | Supported via add()     |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Element Modification   | Not supported        | Not supported        | Supported via set()     |
+    ├─-----------------------+----------------------+----------------------+-------------------------┤
+    | Thread-Safety          | Thread-safe for      | Not thread-safe      | Not thread-safe         |
+    |                        | legacy classes       | (manual sync needed) | (manual sync needed)    |
+    └------------------------+----------------------+----------------------+-------------------------┘
+
+
+Enumeration(I), Interface(I), ListInterface(I):
+    > All these are Interfaces not class, but when we create these we use it's implemented class.
+
+     Interfaces        implemented classes
+          ↓                    ↓
+     Enumeration e    =   v.elements();
+     Iterator it      =   c.iterator();
+     ListIterator ltr =   l.listIterator();

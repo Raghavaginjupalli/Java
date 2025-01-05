@@ -1,0 +1,6 @@
+Yes, not having getters and setters in your Product class can indeed cause a problem in your scenario, especially when JSON serialization is involved. Here's why:
+
+Why Do You Need Getters for JSON Serialization?
+Spring Boot uses Jackson by default to convert your Java objects (like Product) into JSON responses when returning data from your REST API. Jackson requires getters to access the fields of your object for serialization into JSON.
+
+Even though you use constructor injection to initialize the Product class, Jackson does not automatically infer field values from the constructor unless you specifically annotate the constructor with @JsonCreator and its parameters with @JsonProperty. Without these annotations or getters, Jackson cannot access the fields and will return an empty JSON object or list.

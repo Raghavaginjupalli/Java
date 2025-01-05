@@ -1,0 +1,202 @@
+Spring Boot provides a variety of annotations to simplify the development of Spring-based applications. 
+
+Core Annotations:
+	> @SpringBootApplication
+		A combination of @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+		Used on the main application class to enable Spring Boot’s auto-configuration and component scanning.
+	
+	> @Configuration
+		Indicates that the class contains one or more @Bean methods and can be processed by the Spring container to generate bean definitions.
+	
+	> @Bean
+		Used to define a bean managed by the Spring container.
+	
+	> @ComponentScan
+		Configures component scanning directives for finding Spring-managed components.
+	
+	> @EnableAutoConfiguration
+		Enables Spring Boot’s auto-configuration mechanism.
+		
+Component and Dependency Injection:
+	
+	> @Component
+		Marks a class as a Spring-managed component.
+	
+	> @Service
+		A specialized @Component indicating a service class.
+	
+	> @Repository
+		A specialized @Component indicating a data access layer.
+	
+	> @Controller
+		Marks a class as a Spring MVC controller.
+	
+	> @RestController
+		A combination of @Controller and @ResponseBody, simplifying RESTful web services.
+	
+	> @Autowired
+		Automatically injects dependencies into a component.
+	
+	> @Qualifier
+		Specifies which bean to inject when multiple candidates exist.
+	
+	> @Primary
+		Indicates a primary bean for autowiring when multiple candidates exist.
+	
+	> @Lazy
+		Defers bean initialization until it is needed.
+	
+Data Access and Transactions
+	
+	> @Entity
+		Marks a class as a JPA entity.
+	
+	> @Table
+		Specifies the table name for a JPA entity.
+	
+	> @Id
+		Specifies the primary key of a JPA entity.
+	
+	> @GeneratedValue
+		Specifies the generation strategy for primary keys.
+	
+	> @Column
+		Maps a field to a column in a database table.
+	
+	> @Repository
+		Indicates a class as a repository in the persistence layer.
+	
+	> @Transactional
+		Specifies transaction management for a method or class.
+
+Web and REST Annotations
+	
+	> @RequestMapping
+		Maps HTTP requests to handler methods or classes.
+	
+	> @GetMapping
+		Shortcut for @RequestMapping with HTTP GET method.
+	
+	> @PostMapping
+		Shortcut for @RequestMapping with HTTP POST method.
+	
+	> @PutMapping
+		Shortcut for @RequestMapping with HTTP PUT method.
+		
+	> @DeleteMapping
+		Shortcut for @RequestMapping with HTTP DELETE method.
+	
+	> @PatchMapping
+		Shortcut for @RequestMapping with HTTP PATCH method.
+	
+	> @RequestBody
+		Binds the body of an HTTP request to a method parameter.
+	
+	> @ResponseBody
+		Indicates that a method’s return value is serialized into the body of an HTTP response.
+	
+	> @PathVariable
+		Binds a URI template variable to a method parameter.
+	
+	> @RequestParam
+		Binds a query parameter to a method parameter.
+	
+	> @RestControllerAdvice
+		Handles exceptions across multiple @RestController classes.
+	
+	> @CrossOrigin
+		Enables Cross-Origin Resource Sharing (CORS) for a method or class.
+Validation and Constraints
+
+	> @Valid
+		Triggers validation for method parameters or fields.
+	
+	> @NotNull, @Size, @Min, @Max, @Pattern, etc.
+		Common Hibernate Validator annotations for field validation.
+	
+	> @Validated
+		A class-level annotation to validate method arguments.
+
+Testing
+
+	> @SpringBootTest
+		Used for integration testing, providing a full application context.
+
+	> @Test
+		Marks a method as a test case (JUnit 5).
+	
+	> @MockBean
+		Creates a mock of a bean for testing purposes.
+	
+	> @SpyBean
+		Creates a spy of a bean for testing purposes.
+	
+	> @WebMvcTest
+		Used for testing Spring MVC controllers specifically.
+	
+	> @DataJpaTest
+		Used for testing JPA repositories with an in-memory database.
+	
+Scheduling and Asynchronous Processing
+
+	> @EnableScheduling
+		Enables Spring’s scheduled task execution capability.
+	
+	> @Scheduled
+		Marks a method to be executed at a scheduled interval.
+	
+	> @Async
+		Indicates that a method should run asynchronously.
+	
+	> @EnableAsync
+		Enables Spring’s asynchronous method execution capability.
+	
+Security
+
+	> @EnableWebSecurity
+		Enables Spring Security’s web security features.
+		
+	> @PreAuthorize
+		Used to specify access control expressions on methods.
+
+	> @PostAuthorize
+		Evaluates access control expressions after a method is executed.
+	
+	> @RolesAllowed
+		Specifies roles that are allowed to access a method.
+		
+	> @Secured
+		Defines security constraints at the method level.
+	
+	> @AuthenticationPrincipal
+		Accesses the currently authenticated user.
+
+Actuator and Monitoring
+	> @Endpoint
+		Defines a custom actuator endpoint.
+		
+	> @ReadOperation, @WriteOperation, @DeleteOperation
+		Specify operations for custom actuator endpoints.
+	
+Other Useful Annotations
+	
+	> @ConditionalOnProperty
+		Loads a bean only if a specific property is set.
+	
+	> @ConditionalOnMissingBean
+		Loads a bean only if a specific bean is not already defined.
+		
+	> @ConditionalOnClass
+		Loads a bean only if a specific class is on the classpath.
+	
+	> @Profile
+		Specifies the environment profile(s) in which a component is active.
+		
+	> @Value
+		Injects values from the configuration properties or environment.
+		
+	> @PropertySource
+		Specifies a properties file to load into the Spring environment.
+	
+	> @EnableConfigurationProperties
+		Binds properties from configuration files to a custom class.

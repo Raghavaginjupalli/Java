@@ -1,0 +1,58 @@
+Inversion of Control (IoC) in Java:
+	> IoC is a design principle in software development where the control of creating and managing objects (and their dependencies) 
+	  is transferred from the developers (application code) to a framework or container. 
+	> This principle allows developers to focus on defining the logic of the program while delegating control responsibilities to an external entity.
+	
+With IoC:
+	Dependencies are provided externally by an Spring IoC container, which takes control of object lifecycle and dependency injection.
+	
+IoC vs Dependency Injection:
+	> IoC is a principle that refers to the inversion of control between a program and a framework/container.
+	> Dependency Injection (DI) is a specific implementation of IoC where dependencies are provided externally to the class.
+	
+	NOTE: IoC is the concept, but DI is one way to achieve IoC.
+
+Coupled Systems:
+	In software design, coupling refers to the degree of dependency between components or classes in a system. 
+	A system can be classified as tightly coupled or loosely coupled based on how strongly its components are dependent on one another.
+
+	Tightly Coupled Systems:
+		In a tightly coupled system, components are highly dependent on each other. 
+		Changes in one component often require changes in others, making the system harder to maintain, test, and scale.
+
+		> Characteristics of Tight Coupling:
+		
+			High Dependency: Components directly interact and rely on each other.
+			Low Flexibility: Difficult to replace or modify one component without affecting others.
+			Low Reusability: Components are difficult to reuse in other contexts due to strong interdependencies.
+	
+	
+	Loosely Coupled Systems:
+		In a loosely coupled system, components interact with each other in a more independent and flexible manner. 
+		They rely on abstractions (like interfaces) rather than concrete implementations.
+
+		> Characteristics of Loose Coupling:
+		
+			Low Dependency: Components interact through interfaces or external configuration.
+			High Flexibility: Components can be replaced or modified with minimal impact on others.
+			High Reusability: Components are easier to reuse in different contexts or systems.
+
+
+Inject Dependencies:
+	There are three main ways to inject dependencies in Java:
+
+	1- Constructor Injection
+		Inject dependencies via the class constructor.
+
+	2- Setter Injection
+		Inject dependencies via setter methods.
+
+	3- Interface Injection (Less Common)
+		Pass dependencies through a method defined in an interface.
+		This approach is less popular in Java compared to Constructor and Setter injection.
+			
+	When to Use Each Type of Injection
+
+		Constructor DI : Use when the dependency is mandatory and should be provided at object creation.
+		Setter DI	   : Use when the dependency is optional or can be set/changed after object creation.
+		Interface DI   : Rarely used; applicable in cases where the dependency must conform to a specific interface.

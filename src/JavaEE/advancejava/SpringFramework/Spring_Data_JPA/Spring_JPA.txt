@@ -1,0 +1,207 @@
+Spring Data Jpa:
+	> JPA is Java persistence API and it is a principle and rules to execute the ORM, it is not a implementation.
+	> But Hibernate is ORM (Object relational mapping) framework, and it is implemented JPA principle, we have other farmeworks as well, but it is one.
+	> Under the hood Hibernate usees JDBC Api to connect with Database. 
+	> But you no need to wirte the, length of code, Hibernate will write the code.
+
+
+
+Annotations :
+
+	1- Entity and Table Mapping
+		> @Entity
+			Marks a class as a JPA entity (Jpa will careate a table in database for you.)
+			
+			Example:
+				@Entity
+				public class User {
+				}
+			
+		> @Table
+			Specifies the table name and schema for an entity.
+			
+			Example:
+				@Entity
+				@Table(name = "users", schema = "public")
+				public class User {
+				}
+
+		> Primary Key(@Id)
+			Marks a field as the primary key.
+
+			Example:
+				@Id
+				private Long id;
+
+
+		> @GeneratedValue
+			Specifies how the primary key is generated (e.g., auto, sequence, identity).
+			
+			Example:
+				@Id
+				@GeneratedValue(strategy = GenerationType.IDENTITY)
+				private Long id;
+
+
+
+		> Column Mapping (@Column)
+			Maps a field to a database column and allows customization (e.g., name, length).
+			
+			Example:
+				@Column(name = "email", nullable = false, unique = true)
+				private String email;
+
+
+		> @Lob
+			Maps a field to a large object (BLOB or CLOB).
+		
+			Example:
+				@Lob
+				private byte[] data;
+				
+
+		> @Transient
+			Excludes a field from being persisted in the database.
+			
+			Example:
+				@Transient
+				private String tempValue;
+				
+
+		> @Enumerated
+			Maps an enum to a database column.
+
+			Example:
+				@Enumerated(EnumType.STRING)
+				private Status status;
+
+
+		> @Temporal
+			Maps java.util.Date or java.util.Calendar to a database date/time.
+			
+			Example:
+				@Temporal(TemporalType.DATE)
+				private Date birthDate;
+
+
+
+	2- Relationships
+		> @OneToOne
+			Maps a one-to-one relationship.
+
+			Example:
+			@OneToOne
+			private Profile profile;
+
+		> @OneToMany
+			Maps a one-to-many relationship.
+			
+			Example:
+				@OneToMany(mappedBy = "user")
+				private List<Order> orders;
+
+
+		> @ManyToOne
+			Maps a many-to-one relationship.
+			
+			Example:
+				@ManyToOne
+				private Role role;
+
+		> @ManyToMany
+			Maps a many-to-many relationship.
+
+			Example:
+				@ManyToMany
+				@JoinTable(
+				    name = "user_roles",
+				    joinColumns = @JoinColumn(name = "user_id"),
+				    inverseJoinColumns = @JoinColumn(name = "role_id")
+				)
+				private List<Role> roles;
+
+
+		> @JoinColumn
+			Customizes the foreign key column in relationships.
+			
+			Example:
+				@ManyToOne
+				@JoinColumn(name = "role_id")
+				private Role role;
+
+		> @JoinTable
+			Specifies the join table in a many-to-many relationship.
+			Example (shown above in @ManyToMany).
+
+	3- Validation and Constraints
+		> @NotNull
+			Ensures the field is not null (javax validation).
+			
+			Example:
+				@NotNull
+				private String name;
+
+		> @Size
+			Validates the size of a string or collection.
+			
+			Example:
+				@Size(min = 2, max = 100)
+				private String name;
+
+		@Pattern
+			Validates a string using a regular expression.
+		
+		Example:
+			@Pattern(regexp = "[a-zA-Z]+")
+			private String name;
+
+
+		> @UniqueConstraint
+			Ensures uniqueness in table columns.
+			Example:
+				@Table(name = "users", uniqueConstraints = {
+				    @UniqueConstraint(columnNames = "email")
+				})
+
+
+	4- Auditing
+		> @CreatedDate
+			Automatically populates the creation date of an entity.
+
+		>@LastModifiedDate
+			Automatically populates the last modified date of an entity.
+
+		> @CreatedBy
+			Tracks who created the entity.
+
+		> @LastModifiedBy
+			Tracks who last modified the entity.
+
+
+	5- Query Customization
+		> @Query
+			Defines a custom JPQL or SQL query.
+			Example:
+				@Query("SELECT u FROM User u WHERE u.email = ?1")
+				User findByEmail(String email);
+
+		> @Modifying
+			Indicates a modifying query (e.g., UPDATE or DELETE).
+
+			Example:
+				@Modifying
+				@Query("UPDATE User u SET u.status = ?1 WHERE u.id = ?2")
+				void updateStatusById(String status, Long id);
+
+		> @Procedure
+			Maps a stored procedure to a method.
+
+			Example:
+				@Procedure("sp_user_count")
+				int countUsers();
+
+
+
+
+
+	

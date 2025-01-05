@@ -1,0 +1,48 @@
+** Map(Interface): map is an interface, collection is not a root for map interface, instead collection & Map are same level.
+    If we want to represent a group of individual objects as key value pairs where duplicates keys are not allowed
+    but values can be duplicated then we should go for Map.
+            |
+            ├── HashTable (Class)
+            |
+            ├── HashMap (Class)
+            |     |
+            |     └── LinkedHashMap (Class)
+            |
+            └── SortedMap (Interface)
+                   |
+                   └── TreeMap (Class)
+
+
+TreeMap:
+    > The underlying data structure is Red_Black Tree.
+    > Duplicates are not allowed, but inserting order is not preserved.
+    > All objects are inserted some sorting order on keys, not on values.
+    > We can not insert null values in TreeMap, if we insert null then NPE is going to get.
+    > Heterogeneous or homogeneous for keys based on comparator, but values we can take any type.
+    > TreeMap is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+    > The Search operation give better performance, due to Hashcode.
+    > TreeMap is non-synchronized, hence not for Thread safe.
+
+
+
+
+    Constructors:
+        1- TreeMap t = new TreeMap();  // Default sorting order
+
+            > TreeMap creates empty, so there no initial size.
+            > It automatically create new to its parent nodes when objects are added.
+            > Default numbers sorting order is an ascending order and for String alphabetical order.
+
+        2- TreeMap t = new TreeMap(Comparator c);   // Comparator means - specific sorting order
+
+            > TreeMap creates empty, so there no initial size.
+            > It automatically create new nodes to its parent node when objects are added.
+            > Based on specific sorting order it sort the given objects.
+
+        3- TreeMap t = new TreeMap(sortedMap m);
+
+            > by using this constructor we can convert any sortedMap method to TreeMap method.
+
+        4- TreeMap t = new TreeMap(Map m);
+
+            > by using this constructor we can convert any Map method to TreeMap method.

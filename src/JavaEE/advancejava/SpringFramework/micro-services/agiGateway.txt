@@ -1,0 +1,2 @@
+when we create micro services, every service have there url to call, but using api gatway,
+eureka client we can call all micro services through api-gateway url with service name.

@@ -1,0 +1,69 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+List(Interface): list is a child interface of collection interface.
+
+    If we want to represent a group of individual objects as single entity where duplicates are allowed and storing the
+    elements as per the insertion order then we should go for List.
+        |
+        ├── ArrayList (Class)
+        |
+        ├── LinkedHashSet (Class)
+        |
+        └── Vector (Class)
+               |
+               └── Stack (Class)
+
+
+    Stack:
+        > It is child class of Vector class, it is specially designed class for Last In First Out (LIFO).
+        > The underlying data structure is resizable or growable array.
+        > Duplicates are allowed, but insertion order is preserved.
+        > Heterogeneous objects are allowed.
+        > We can insert null values.
+        > Stack is implemented by Serializable(I), cloneable(I) and RandomAccess(I).
+        > Stack is synchronized, hence it is Thread safe.
+
+
+    Constructors:
+        Stack s = new Stack();
+
+            > LinkedList creates empty, so there no initial size.
+            > It automatically create new nodes when objects are added.
+
+Data Structure:
+    > Initially Stack create with default size of 10, then it grow the size.
+    > If default size exceeds, it creates double size of current size.
+    > These all properties inherited from vector class.
+
+    [ new size = current size * 2]
+                                             Stack
+                                            ┌-------┐
+    Stack s = new Stack();                  |   D   |
+       s.push("A")                          ├-------┤
+       s.push("B")                          |   C   |
+       s.push("C")                          ├-------┤
+       s.push("D")                          |   B   |
+                                            ├-------┤
+NOTE: Actually i added a first, but         |   A   |
+    it stored in the last, because (LIFO).  └-------┘
+
+
+Stack methods:
+    > object push(Object obj):
+        for inserting an object to the stack.
+    > Object pop():
+        To remove and returns top of the stack.
+    > Object peak():
+        To return the top of the stack without removal og object.
+    > int search(Object obj):
+        If the specified object is available it returns it's offset from top of the stack.
+        if given object is not there return -1.
+    > boolean empty():
+        To check whether stack is empty or not.

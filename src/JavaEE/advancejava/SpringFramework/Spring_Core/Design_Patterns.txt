@@ -1,0 +1,21 @@
+
+
+Behavioral design pattern:
+	
+	1-Strategy design patteren:
+		The Strategy design pattern is a behavioral design pattern that enables selecting an algorithm at runtime by defining a multiple of algorithms, 
+		encapsulating each one, and making them interchangeable. This approach allows the algorithm to vary independently from the clients that use it.
+		
+		> IF the Class follow the Strategy design patteren, then only spring manage the object creation and dependency injection. 
+		
+		To Create Strategy design pattern full fill this rules.
+		Rules for this patteren:
+			> Open extension/Closed modification: 
+				The approach is open for extension (adding new methods in interface) but closed for modification, 
+				as existing code doesn't need to change when new strategies are added.
+			
+			> Always code to interface, insted of concrete class implementaions.
+				Clients interact with the interface, promoting loose coupling and easier maintenance.
+				
+			> Favor Composition Over Inheritance: 
+				By composing behaviors through strategy implementations, the system becomes more flexible and easier to extend compared to using inheritance.

@@ -1,0 +1,103 @@
+** Collection(Interface):
+    collection is an interface, it is a root for list, set, queue interfaces.
+        |
+        ├── List (Interface)
+        |
+        ├── Set  (Interface)
+        |
+        └── Queue (Interface)
+
+List(Interface): list is a child interface of collection interface.
+
+    If we want to represent a group of individual objects as single entity where duplicates are allowed and storing the
+    elements as per the insertion order then we should go for List.
+        |
+        ├── ArrayList (Class)
+        |
+        ├── LinkedList (Class)
+        |
+        └── Vector (Class)
+               |
+               └── Stack (Class)
+
+
+LikedList:
+    > The underlying data structure is doubly linked list.
+    > Duplicates are allowed, but insertion order is preserved.
+    > Heterogeneous objects are allowed.
+    > We can insert null values.
+    > LinkedList is implemented by Serializable(I) and cloneable(I), but not RandomAccess(I).
+
+
+Data Structure:
+    > LinkedList object create inside nodes, based on requirement nodes will add.
+    > Initially empty, if you add objects then it will automatically increase.
+    > For every object a single node will create, every node connect with both side of previous and next nodes.
+
+    ┌----┐
+    |    | + -->
+    └----┘
+     Node-1
+
+    ┌----┐      ┌----┐      ┌----┐
+    |    | <--> |    | <--> |    |
+    └----┘      └----┘      └----┘
+    Node-1      Node-2      Node-3
+
+    If you add or remove middle object just pointers change, there is no shuffle operation.
+             ┌----┐
+    ┌----┐ ↗ |    | ↘ ┌----┐      ┌----┐
+    |    |   └----┘   |    | <--> |    |
+    └----┘            └----┘      └----┘
+    Node-1            Node-2      Node-3
+
+    NOTE: If you object in middle, new node will create in between and pointers will point to new node.
+
+Constructors:
+    1- LinkedList l = new LinkedList();
+
+        > LinkedList creates empty, so there no initial size.
+        > It automatically create new nodes when objects are added.
+
+    2- LinkedList l = new LinkedList(Collection c);
+
+        > By using this constructor we can convert any collection method to LinkedList method.
+
+LinkedList Methods: (only for LinkedList)
+    void addFirst();
+    void addLast();
+    object getFirst();
+    object getLast();
+    object removeFirst();
+    object removeLast();
+
+(Serializable(I) and cloneable(I)):
+    > By using collections we can hold group of data/objects in single entity and transfer across the network for storing this data.
+    > To store group objects we need data in serialized, but by default every collection object is serialized by serializable(I).
+    > To perform receiver any operation on the transferred data, receiver will created duplicate of data by cloneable(I).
+    > To perform data serialized and create duplicate of data every collection method is implemented by " Serializable(I) and cloneable(I)."
+
+
+*********************************** Advantages & Disadvantages ***************************************************
+Advantages:
+    > If your data contains duplicates and insertion order is preserved then best to go LinkedList.
+    > If your requirement is frequent operation is adding and removing objects in the middle, go for LikedList.
+    > If your data contain null values then best to go LinkedList.
+
+Disadvantages:
+    > If your frequent operation is retrieval, don't go to LinkedList because no RandomAccess implementation.
+
+
+Difference between ArrayList and LinkedList:
+
+    ┌---------------------------------------------┬--------------------------------------------┐
+    |             ArrayList                       |                 LinkedList                 |
+    ├──-------------------------------------------+--------------------------------------------┤
+    | Data Structure based on Dynamic array.      | Data Structure based on Double Linked List.|
+    ├──-------------------------------------------+--------------------------------------------┤
+    | ArrayList is best for retrieval, because of | LinkedList is not best for retrieval,      |
+    | RandomAccess implementation.                | because of no RandomAccess implementation. |
+    ├──-------------------------------------------+--------------------------------------------┤
+    | ArrayList is not best for adding or removing| LinkedList is best for adding or removing  |
+    | objects in middle, because of shuffling.    | objects in middle, because no shuffling.   |
+    └──-------------------------------------------┴--------------------------------------------┘

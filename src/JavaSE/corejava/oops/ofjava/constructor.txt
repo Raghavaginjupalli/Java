@@ -1,0 +1,5 @@
+what is constructor, type of it?
+what is this()?
+what is super()?
+NOTE: > Every default class extends object class, if class don't have any inheritence.
+	      > Every creation of object, then constructor will invoke and initialize the instance variable. 
